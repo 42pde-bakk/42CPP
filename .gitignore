@@ -30,4 +30,11 @@
 *.exe
 *.out
 *.app
-megaphone
+megaphone #executable for module00/ex00
+
+#vscode junk
+*.vscode
+#emacs shit
+*.c~
+*.h~
+
