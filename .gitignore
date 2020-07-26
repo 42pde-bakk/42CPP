@@ -37,4 +37,5 @@ megaphone #executable for module00/ex00
 #emacs shit
 *.c~
 *.h~
+*.pdf
 
