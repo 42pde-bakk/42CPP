@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Phonebook.Class.hpp                                :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 20:38:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/25 23:10:02 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/26 02:02:56 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ class Phonebook {
 
 public:
 	Phonebook();
-	int	add_contact(Contact& contact);
+	bool	add_contact(Contact& contact);
+	void	print_selected_contact(int index);
+	void	print_list(void);
 	~Phonebook();
 private:
 	Contact _contacts[8];
-	int		_contact_count;
+	int		_contacts_count;
 
 };
 

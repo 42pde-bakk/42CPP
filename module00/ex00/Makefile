@@ -3,16 +3,20 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: pde-bakk <pde-bakk@student.codam.nl>         +#+                      #
+#    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/07/25 23:20:04 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/07/26 01:04:33 by Peer          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = clang++
+ifeq ($(shell uname), Linux)
+ CC = g++
+else
+ CC = clang++
+endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
 all: $(NAME)
