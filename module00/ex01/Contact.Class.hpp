@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Contact.Class.hpp                                  :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 21:24:47 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/25 23:10:04 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/26 01:58:25 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ class Contact {
 		void	set_favourite_meal(std::string meal);
 		void	set_underwear_colour(std::string colour);
 		void	set_darkest_secret(std::string secret);
-		void	print(void);
+		void	print_all_contact_fields();
+		void	print_field(std::string str);
+		void	print_contact(int index);
 
 	private:	
 		std::string _first_name;

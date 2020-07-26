@@ -3,16 +3,20 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: pde-bakk <pde-bakk@student.codam.nl>         +#+                      #
+#    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/07/25 23:09:47 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/07/26 02:16:15 by Peer          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-CC = clang++
+ifeq ($(shell uname), Linux)
+ CC = g++
+else
+ CC = clang++
+endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
 FILES = main.cpp Phonebook.Class.cpp Contact.Class.cpp
@@ -20,7 +24,7 @@ FILES = main.cpp Phonebook.Class.cpp Contact.Class.cpp
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FILES) $(FLAGS) -o $(NAME)
+	$(CC) $(FILES) $(FLAGS) -o $(NAME).out
 
 clean:
 	rm -f $(NAME)

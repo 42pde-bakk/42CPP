@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 21:11:05 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/25 23:18:50 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/26 02:03:29 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ Contact	set_contact_info(void)
 	std::cout << "Enter the contact's darkest secret, please." << std::endl;
 	std::cin >> input;
 	new_contact.set_darkest_secret(input);
-	
-	// new_contact.print();
+
 	return (new_contact);
 }
 
@@ -77,7 +76,15 @@ int		main( void) {
 			break ;
 		else if (input == "ADD") {
 			Contact new_contact =  set_contact_info();
-
+			if (!my_phonebook.add_contact(new_contact))
+				std::cout << "Contact list is full" << std::endl;
+		}
+		else if (input == "SEARCH") {
+			my_phonebook.print_list();
+			std::cout << "Please enter the index you'd like to see more information of" << std::endl;
+			std::cin >> input;
+			int index = (int)(input.at(0) - 48);
+			my_phonebook.print_selected_contact(index);
 		}
 	}
 }
