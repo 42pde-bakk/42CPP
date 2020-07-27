@@ -6,11 +6,13 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 21:30:40 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/26 01:59:43 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/27 14:48:40 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.Class.hpp"
+#include <iostream>
+#include <iomanip>
 
 void	Contact::set_firstname(std::string name) { _first_name = name;}
 void	Contact::set_lastname(std::string name) { _last_name = name;}
@@ -23,8 +25,8 @@ void	Contact::set_birthday(std::string day) { _birthday = day;}
 void	Contact::set_favourite_meal(std::string meal) { _favourite_meal = meal;}
 void	Contact::set_underwear_colour(std::string colour) { _underwear_colour = colour;}
 void	Contact::set_darkest_secret(std::string secret) { _darkest_secret = secret;}
+
 void	Contact::print_field(std::string str) {
-	
 	if (str.length() > 10)
 		std::cout << str.substr(0, 9) << ".";
 	else

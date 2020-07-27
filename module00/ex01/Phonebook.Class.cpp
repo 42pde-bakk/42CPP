@@ -6,11 +6,13 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 20:37:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/26 02:04:27 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/27 14:48:47 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.Class.hpp"
+#include <iostream>
+#include <iomanip>
 
 Phonebook::Phonebook( void ){_contacts_count = 0;}
 

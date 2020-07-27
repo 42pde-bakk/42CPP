@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 20:38:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/26 02:02:56 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/27 14:48:22 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PHONEBOOK_CLASS_HPP
 
 # include "Contact.Class.hpp"
+# include <iostream>
+# include <iomanip>
 
 class Phonebook {
 
