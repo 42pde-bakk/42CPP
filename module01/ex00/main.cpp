@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 12:53:36 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/27 14:02:01 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/27 19:22:19 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ponyOnTheStack()
 {
-	Pony	bob = Pony(80, 2, "black", "Bob");
+	Pony	bob = Pony(80, 2, "black", "Bobbejanus");
 	bob.displayPonyinfo();
 }
 
 void	PonyOnTheHeap()
 {
-	Pony	*jim = new Pony(150, 4, "white", "Jim");
+	Pony	*jim = new Pony(150, 4, "white", "Jimothy");
 	if (jim == NULL) {
 		std::cout << "Failed to allocate a pony on the heap" << std::endl;
 		return ;

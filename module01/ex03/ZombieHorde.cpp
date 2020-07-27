@@ -1,50 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ZombieEvent.cpp                                    :+:    :+:            */
+/*   ZombieHorde.cpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 19:11:14 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:17:22 by Peer          ########   odam.nl         */
+/*   Created: 2020/07/27 20:43:25 by Peer          #+#    #+#                 */
+/*   Updated: 2020/07/27 20:57:23 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
 #include "Zombie.hpp"
-#include <string>
-#include <iostream>
+#include "ZombieHorde.hpp"
 #include <cstdlib>
+#include <iostream>
 
-ZombieEvent::ZombieEvent() {
-	_eventType = 0;
+ZombieHorde::ZombieHorde(int N) {
+	srand(time(NULL));
+	_nZombies = new Zombie[N];
+	for (int i = 0; i < N; i++)	{
+		_nZombies[i].setName(randomName() );
+		_nZombies[i].setType(rand() % 10 + 1);
+		_nZombies[i].announce();
+	}
 }
+ZombieHorde::~ZombieHorde() { delete[] _nZombies; }
 
-void	ZombieEvent::setZombieType(int value) {
-	_eventType = value;
-}
-
-Zombie	*ZombieEvent::newZombie(std::string name) {
-	Zombie	*zombs = new Zombie;
-	if (!zombs)
-		return (NULL);
-	zombs->setType(_eventType);
-	zombs->setName(name);
-	return (zombs);
-}
-
-std::string	randomName(int x) {
+std::string	ZombieHorde::randomName() {
 	std::string names[] = {"Peer", "Thijs", "Djevayo", "Albert", "Iris", "Sanne", "Amber", "Jeffrey", "J-money", "Turlough", "Ingmar", "Boris", "Remco", "Wester", "Lindsay", "Merel", "Stan", "Tuan"};
-	return names[x];
-}
-
-Zombie	*ZombieEvent::randomChump(void) {
 	int x = (rand() % 18) + 1;
-	std::string name = randomName(x);
-	Zombie *zombs = newZombie(name);
-	zombs->announce();
-	return (zombs);
-}
-ZombieEvent::~ZombieEvent() {
-	std::cout << "ZombieEvent closed down" << std::endl;
+	return names[x];
 }

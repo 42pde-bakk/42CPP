@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 16:39:50 by peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:17:48 by Peer          ########   odam.nl         */
+/*   Created: 2020/07/27 19:49:39 by Peer          #+#    #+#                 */
+/*   Updated: 2020/07/27 20:54:23 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
 #include <string>
+#include <iostream>
+#include <cstdlib>
+#include "ZombieHorde.hpp"
+#include "Zombie.hpp"
 
-class Zombie {
-	public:
-				Zombie();
-		void	setName(std::string str);
-		void	setType(int value);
-		void	announce() const;
-				~Zombie();
+int		main() {
+	ZombieHorde	z(5);
+	
+	std::cout << std::endl << "Another one!" << std::endl << std::endl;
+	ZombieHorde biggerz(10);
 
-	private:
-		std::string	_name;
-		int			_type;
-};
-
-#endif
+	system("leaks zombiehorde.out");
+	return (0);
+}

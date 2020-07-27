@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   ZombieHorde.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 16:39:50 by peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:17:48 by Peer          ########   odam.nl         */
+/*   Created: 2020/07/27 20:39:20 by Peer          #+#    #+#                 */
+/*   Updated: 2020/07/27 20:56:39 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
+#include "Zombie.hpp"
 #include <string>
 
-class Zombie {
+class	ZombieHorde {
 	public:
-				Zombie();
-		void	setName(std::string str);
-		void	setType(int value);
-		void	announce() const;
-				~Zombie();
-
+		ZombieHorde(int N);
+		~ZombieHorde();
 	private:
-		std::string	_name;
-		int			_type;
+		std::string	randomName(void);
+		Zombie	*_nZombies;
 };
 
 #endif
