@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/07/27 14:01:21 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/07/27 14:01:08 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = ponies
 
 ifeq ($(shell uname), Linux)
  CXX = g++
@@ -19,7 +19,7 @@ else
 endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-FILES = main.cpp Phonebook.Class.cpp Contact.Class.cpp
+FILES = main.cpp Pony.cpp
 
 all: $(NAME)
 
