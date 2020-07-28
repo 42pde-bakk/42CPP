@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 10:56:26 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/28 11:32:45 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/28 17:00:50 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main() {
 		Weapon	club = Weapon("crude spiked club");
 		HumanB jim("Jim");
 		jim.setWeapon(club);
-	std::cout << "lets fucking go nerds" << std::endl;
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
