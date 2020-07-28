@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 11:49:26 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/28 12:50:30 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/28 15:29:09 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,12 @@ int replace(std::string input, std::string s1, std::string s2) {
 		return 0;
 	}
 	std::string	readline;
-	while (getline(inputstream, readline)) {
-		std::cout << "new getline() call, readline.length = " << readline.length() << std::endl;
-		size_t pos = 0;
-		pos = readline.find(s1, pos);
-		std::cout << "first pos = " << pos << std::endl;
-		pos = readline.find(s1, pos);
-		std::cout << "second pos = " << pos << std::endl;
-		std::cout << "npos: " << std::string::npos << std::endl;
-		while (pos != std::string::npos) {
-			readline.replace(pos, s1.length(), s2);
-			pos = readline.find(s1, pos++);
+	while (std::getline(inputstream, readline)) {
+		size_t	found = readline.find(s1);
+		while (found != std::string::npos) {
+			readline.replace(found, s1.length(), s2);
+			found = readline.find(s1, found + s2.length());
+			i++;
 		}
 		outputstream << readline << std::endl;
 	}

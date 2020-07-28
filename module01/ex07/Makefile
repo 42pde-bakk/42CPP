@@ -6,7 +6,7 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/07/28 11:51:12 by Peer          ########   odam.nl          #
+#    Updated: 2020/07/28 15:30:12 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,5 +30,6 @@ clean:
 	rm -f $(NAME)
 
 fclean: clean
+	rm -f 
 
 re: fclean all
