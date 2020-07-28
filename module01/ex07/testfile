@@ -1,0 +1,3 @@
+std::ofstream can only be constructed with a std::string if you have C++11 or higher. 
+Typically that is done with -std=c++11 (gcc, clang). 
+If you do not have access to c++11 then you can use the c_str() function of std::string to pass a const char * to the ofstream constructor.
