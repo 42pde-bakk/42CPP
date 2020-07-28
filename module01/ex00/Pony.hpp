@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 12:35:20 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/27 12:57:23 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/28 17:48:10 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class	Pony
 	
 	public:
 		Pony( int size, int length, std::string colour, std::string name );
-		~Pony( void );
 		void		displayPonyinfo( void) const;
-		static int	getPonyamount( void);
-		// int			getPonysize(void) const
+		~Pony( void );
 };
