@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 12:53:36 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/27 19:22:19 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/28 15:33:07 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ponyOnTheStack()
 {
-	Pony	bob = Pony(80, 2, "black", "Bobbejanus");
+	Pony	bob = Pony(80, 2, "black", "Robert Haslam");
 	bob.displayPonyinfo();
 }
 
