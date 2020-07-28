@@ -17,6 +17,7 @@
 int replace(std::string input, std::string s1, std::string s2) {
 	std::ifstream	inputstream(input.c_str());
 	std::string		outputfile = std::string() + input + ".replace";
+	std::string		buffer;
 	std::ofstream	outputstream(outputfile.c_str());
 
 	if (!inputstream || !outputstream) {
@@ -30,8 +31,10 @@ int replace(std::string input, std::string s1, std::string s2) {
 			readline.replace(found, s1.length(), s2);
 			found = readline.find(s1, found + s2.length());
 		}
-		outputstream << readline << std::endl;
+		buffer += readline + '\n';
 	}
+	buffer.pop_back();
+	outputstream << buffer;
 	return (1);
 }
 
