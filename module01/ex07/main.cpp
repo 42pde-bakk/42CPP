@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 11:49:26 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/28 15:29:09 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/28 16:46:38 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int replace(std::string input, std::string s1, std::string s2) {
 		while (found != std::string::npos) {
 			readline.replace(found, s1.length(), s2);
 			found = readline.find(s1, found + s2.length());
-			i++;
 		}
 		outputstream << readline << std::endl;
 	}
