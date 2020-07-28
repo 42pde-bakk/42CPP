@@ -6,39 +6,45 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/25 20:37:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/27 14:48:47 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/28 09:33:16 by Peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.Class.hpp"
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
-Phonebook::Phonebook( void ){_contacts_count = 0;}
+Phonebook::Phonebook(void) { _contacts_count = 0; }
 
-bool	Phonebook::add_contact(Contact& contact) {
-	if (_contacts_count >= 8)
-		return false;
-	_contacts[_contacts_count] = contact;
-	_contacts_count++;
-	return true;
+bool Phonebook::add_contact(Contact contact) {
+  if (_contacts_count >= 8)
+    return false;
+  _contacts[_contacts_count] = contact;
+  _contacts_count++;
+  return true;
 }
 
-void	Phonebook::print_selected_contact(int index) {
-	
-	if (index < 0 || index > 7 || index >= this->_contacts_count) {
-		std::cout << "Sorry, this index is invalid." << std::endl;
-		return ;
-	}
-	_contacts[index].print_all_contact_fields();
+void Phonebook::print_selected_contact(int index) {
+
+  if (index < 0 || index > 7 || index >= this->_contacts_count) {
+    std::cout << "Sorry, this index is invalid." << std::endl;
+    return;
+  }
+  _contacts[index].print_all_contact_fields();
 }
 
-void	Phonebook::print_list(void) {
+void Phonebook::print_list(void) {
 
-	std::cout << std::setw(10) << "index" << "|" << "first name" << "|" << "last name" << "|" << "nickname" << std::endl;
-	
-	for (int i = 0; i < _contacts_count; i++)
-		_contacts[i].print_contact(i);
+  std::cout << std::setw(10) << "index"
+            << "|"
+            << "first name"
+            << "|"
+            << "last name"
+            << "|"
+            << "nickname" << std::endl;
+
+  for (int i = 0; i < _contacts_count; i++)
+    _contacts[i].print_contact(i);
 }
 
-Phonebook::~Phonebook( void) {}
+Phonebook::~Phonebook(void) {}
