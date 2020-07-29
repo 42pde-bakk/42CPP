@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 11:49:26 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/28 16:46:38 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/29 16:47:13 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int replace(std::string input, std::string s1, std::string s2) {
 		}
 		outputstream << readline << std::endl;
 	}
+	/* No real need to close filestreams, as their destructor takes care of that for me */
 	return (1);
 }
 
