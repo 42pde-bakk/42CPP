@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 17:05:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/29 19:29:37 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/30 13:31:45 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ Fixed::Fixed( const Fixed &old_obj) {
 float	Fixed::toFloat( void) const {
 	float	out;
 
-	out = _fpv >> _nbFractBits;
+	/* O */
+	out = (_fpv >> _nbFractBits);
+	std::cout << std::endl << "out = " << out << std::endl;
 	out += (float)(_fpv & 0xFF) / 256.0f;
 	return (out);
 }
@@ -59,6 +61,11 @@ Fixed&	Fixed::operator=(const Fixed &other) {
 	std::cout << "Assignment operator called" << std::endl;
 	_fpv = other.getRawBits();
 	return *this;
+}
+
+std::ostream&	operator<<(std::ostream& out, const Fixed& self) {
+	out << self.toFloat();
+	return out;
 }
 
 Fixed::~Fixed() {

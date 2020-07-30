@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 19:49:39 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:36:57 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/30 12:59:35 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 void	putZombieOnTheHeap(ZombieEvent event) {
 	Zombie		*heapzombie;
 	
-	srand(time(NULL));
 	event.setZombieType( (rand() % 10) + 1 );
 	heapzombie = event.randomChump();
 	delete heapzombie;
@@ -29,6 +28,7 @@ int		main() {
 	ZombieEvent	event;
 	Zombie		stackZombie;
 	
+	srand(time(NULL));
 	putZombieOnTheHeap(event);
 
 	stackZombie.setName("Stack smasher");
