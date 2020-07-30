@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 11:49:26 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/29 16:47:13 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/30 15:31:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,22 @@ int replace(std::string input, std::string s1, std::string s2) {
 	std::ifstream	inputstream(input.c_str());
 	std::string		outputfile = std::string() + input + ".replace";
 	std::ofstream	outputstream(outputfile.c_str());
+	std::string	readline;
 
 	if (!inputstream || !outputstream) {
 		std::cerr << "File cannot be opened!" << std::endl;
 		return 0;
 	}
-	std::string	readline;
 	while (std::getline(inputstream, readline)) {
 		size_t	found = readline.find(s1);
 		while (found != std::string::npos) {
 			readline.replace(found, s1.length(), s2);
 			found = readline.find(s1, found + s2.length());
 		}
-		outputstream << readline << std::endl;
+		outputstream << readline;
+		if (!inputstream.eof())
+			outputstream << std::endl;
 	}
-	/* No real need to close filestreams, as their destructor takes care of that for me */
 	return (1);
 }
 
