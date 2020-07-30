@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 19:49:39 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/30 12:59:35 by peer          ########   odam.nl         */
+/*   Updated: 2020/07/30 15:36:21 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 
-void	putZombieOnTheHeap(ZombieEvent event) {
+void	spawnZombieOnTheHeap(ZombieEvent event) {
 	Zombie		*heapzombie;
 	
 	event.setZombieType( (rand() % 10) + 1 );
@@ -29,19 +29,19 @@ int		main() {
 	Zombie		stackZombie;
 	
 	srand(time(NULL));
-	putZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
 
 	stackZombie.setName("Stack smasher");
 	stackZombie.setType(0);
 	stackZombie.announce();
 
-	putZombieOnTheHeap(event);
-	putZombieOnTheHeap(event);
-	putZombieOnTheHeap(event);
-	putZombieOnTheHeap(event);
-	putZombieOnTheHeap(event);
-	putZombieOnTheHeap(event);
-	putZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
+	spawnZombieOnTheHeap(event);
 
 	system("leaks zombie.out");
 }

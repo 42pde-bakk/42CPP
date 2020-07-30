@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 19:11:14 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:17:22 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/30 15:35:07 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ Zombie	*ZombieEvent::newZombie(std::string name) {
 }
 
 std::string	randomName(int x) {
-	std::string names[] = {"Peer", "Thijs", "Djevayo", "Albert", "Iris", "Sanne", "Amber", "Jeffrey", "J-money", "Turlough", "Ingmar", "Boris", "Remco", "Wester", "Lindsay", "Merel", "Stan", "Tuan"};
+	std::string names[] = {"Peer", "Thijs", "Djevayo", "Albert", "Iris", "Sanne", "Amber", "Jeffrey", "J-money", "Turlough", "Ingmar", "Boris", "Remco", "Wester", "Lindsay", "Merel", "Stan", "Tuan", "Victor", "Griffin"};
 	return names[x];
 }
 
 Zombie	*ZombieEvent::randomChump(void) {
-	int x = (rand() % 18) + 1;
+	int x = (rand() % 20) + 1;
 	std::string name = randomName(x);
 	Zombie *zombs = newZombie(name);
 	zombs->announce();
