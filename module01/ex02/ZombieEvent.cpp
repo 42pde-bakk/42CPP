@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 19:11:14 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/30 15:35:07 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/30 15:40:44 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ std::string	randomName(int x) {
 }
 
 Zombie	*ZombieEvent::randomChump(void) {
-	int x = (rand() % 20) + 1;
+	int x = (rand() % 20);
 	std::string name = randomName(x);
 	Zombie *zombs = newZombie(name);
 	zombs->announce();

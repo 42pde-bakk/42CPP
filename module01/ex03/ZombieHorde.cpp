@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 20:43:25 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:57:23 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/30 15:39:56 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 
 ZombieHorde::ZombieHorde(int N) {
-	srand(time(NULL));
 	_nZombies = new Zombie[N];
 	for (int i = 0; i < N; i++)	{
 		_nZombies[i].setName(randomName() );
@@ -27,7 +26,7 @@ ZombieHorde::ZombieHorde(int N) {
 ZombieHorde::~ZombieHorde() { delete[] _nZombies; }
 
 std::string	ZombieHorde::randomName() {
-	std::string names[] = {"Peer", "Thijs", "Djevayo", "Albert", "Iris", "Sanne", "Amber", "Jeffrey", "J-money", "Turlough", "Ingmar", "Boris", "Remco", "Wester", "Lindsay", "Merel", "Stan", "Tuan"};
-	int x = (rand() % 18) + 1;
+	std::string names[] = {"Peer", "Thijs", "Djevayo", "Albert", "Iris", "Sanne", "Amber", "Jeffrey", "J-money", "Turlough", "Ingmar", "Boris", "Remco", "Wester", "Lindsay", "Merel", "Stan", "Tuan", "Victor", "Griffin"};
+	int x = (rand() % 20);
 	return names[x];
 }

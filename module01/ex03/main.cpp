@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 19:49:39 by Peer          #+#    #+#                 */
-/*   Updated: 2020/07/27 20:54:23 by Peer          ########   odam.nl         */
+/*   Updated: 2020/07/30 15:38:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "Zombie.hpp"
 
 int		main() {
+	srand(time(NULL));	
 	ZombieHorde	z(5);
 	
 	std::cout << std::endl << "Another one!" << std::endl << std::endl;
