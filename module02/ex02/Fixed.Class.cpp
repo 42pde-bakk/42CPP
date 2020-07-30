@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 17:05:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/30 15:18:39 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/07/30 17:02:48 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void	Fixed::setRawBits(int const raw) {
 
 Fixed&	Fixed::operator=(const Fixed &other) {
 	std::cout << "Assignation operator called" << std::endl;
-	_fpv = other.getRawBits();
+	// _fpv = other.getRawBits();
+	*this = other;
 	return *this;
 }
 
