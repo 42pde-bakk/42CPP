@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/02 14:01:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:26:25 by pde-bakk      ########   odam.nl         */
+/*   Created: 2020/07/30 16:47:24 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/02 17:30:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include <iostream>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+#include "BasicTrap.hpp"
 #include <string>
 
-int	main(void) {
-	srand(time(NULL));
-	FragTrap	trapper;
-	FragTrap	claptrap("ClapTrap");
+class ScavTrap : public BasicTrap
+{
+public:
+	ScavTrap();
+	ScavTrap(const std::string name);
+	void	challengeNewcomer(std::string const & target);
+};
 
-	
-	trapper.rangedAttack("some target");
-	claptrap.meleeAttack("you");
-	
-	trapper.takeDamage(4);
-
-	claptrap.beRepaired(20);
-	trapper.beRepaired(2);
-	
-	claptrap.vaulthunter_dot_exe("his nemesis");
-
-	claptrap.ActualRangedAttack(trapper);
-	trapper.ActualMeleeAttack(trapper);
-}
+#endif

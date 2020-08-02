@@ -6,7 +6,7 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/02 16:45:02 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/02 17:41:21 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ else
 endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-FILES = main.cpp FragTrap.cpp
+FILES = main.cpp FragTrap.cpp ScavTrap.cpp BasicTrap.cpp
 
 all: $(NAME)
 

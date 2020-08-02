@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   ClapTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:47:24 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:17:10 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/02 17:28:35 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 #include <string>
 
-class FragTrap
-{
+class ClapTrap {
 public:
-	FragTrap();
-	FragTrap(const std::string name);
-	FragTrap( const FragTrap &old_obj);
-	FragTrap& operator=(const FragTrap &other);
+	ClapTrap(); // we dont use this one
+	ClapTrap(const std::string type, const std::string name);
+	ClapTrap( const ClapTrap &old_obj);
+	ClapTrap& operator=(const ClapTrap &other);
 
 	std::string	getRandomColour();
+	std::string	getClassname();
 	void	rangedAttack(std::string const &target);
-	void	ActualRangedAttack(FragTrap &target);
-	void	ActualMeleeAttack(FragTrap &target);
+	void	ActualRangedAttack(ClapTrap &target);
+	void	ActualMeleeAttack(ClapTrap &target);
 	void	meleeAttack(std::string const &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void	vaulthunter_dot_exe(std::string const & target);
 
-	~FragTrap();
-private:
+	~ClapTrap();
+protected:
 	std::string	_name,
-				_colour;
+				_colour,
+				_classname;
+
 	int			_hp,
 				_maxhp,
 				_ep,
@@ -43,7 +44,7 @@ private:
 				_melee_dmg,
 				_ranged_dmg,
 				_armor_reduc;
-
+private:
 };
 
 #endif

@@ -6,18 +6,22 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/02 14:01:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:26:25 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/02 18:24:23 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "NinjaTrap.hpp"
 #include <iostream>
 #include <string>
 
 int	main(void) {
 	srand(time(NULL));
 	FragTrap	trapper;
-	FragTrap	claptrap("ClapTrap");
+	ScavTrap	claptrap("ClapTrap");
+	NinjaTrap	Yuto("Yuto");
 
 	
 	trapper.rangedAttack("some target");
@@ -28,8 +32,10 @@ int	main(void) {
 	claptrap.beRepaired(20);
 	trapper.beRepaired(2);
 	
-	claptrap.vaulthunter_dot_exe("his nemesis");
+	claptrap.challengeNewcomer("his nemesis");
 
 	claptrap.ActualRangedAttack(trapper);
 	trapper.ActualMeleeAttack(trapper);
+
+	Yuto.ninjaShoebox(Yuto);
 }

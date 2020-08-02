@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   NinjaTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/02 14:01:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:26:25 by pde-bakk      ########   odam.nl         */
+/*   Created: 2020/07/30 16:47:24 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/02 18:34:54 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include <iostream>
+#ifndef NINJATRAP_HPP
+# define NINJATRAP_HPP
+#include "ClapTrap.hpp"
 #include <string>
 
-int	main(void) {
-	srand(time(NULL));
-	FragTrap	trapper;
-	FragTrap	claptrap("ClapTrap");
+class NinjaTrap : virtual public ClapTrap
+{
+public:
+	NinjaTrap();
+	NinjaTrap(const std::string name);
+	~NinjaTrap();
+	void	ninjaShoebox(ClapTrap &target);
+};
 
-	
-	trapper.rangedAttack("some target");
-	claptrap.meleeAttack("you");
-	
-	trapper.takeDamage(4);
-
-	claptrap.beRepaired(20);
-	trapper.beRepaired(2);
-	
-	claptrap.vaulthunter_dot_exe("his nemesis");
-
-	claptrap.ActualRangedAttack(trapper);
-	trapper.ActualMeleeAttack(trapper);
-}
+#endif
