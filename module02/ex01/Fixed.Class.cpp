@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 17:05:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/30 17:07:32 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/02 16:51:36 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ float	Fixed::toFloat( void) const {
 	float	out;
 
 	out = (_fpv >> _nbFractBits); //
-	out += (float)(_fpv & 0xFF) / 256.0f; // only keeping the last 8 bits that are on, we add those as decimals.
+	out += (float)(_fpv & 0xFF) / (1 << _nbFractBits); // only keeping the last 8 bits that are on, we add those as decimals.
 	return (out);
 }
 

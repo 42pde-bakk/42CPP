@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 16:56:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/29 17:50:44 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/02 16:51:00 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 private:
 	/* data */
 	int		_fpv;
-	static const int	_nbFractBits = 0;
+	static const int	_nbFractBits = 8;
 };
 
 #endif
