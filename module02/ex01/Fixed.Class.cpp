@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 17:05:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:51:36 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/03 18:19:10 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,16 @@ Fixed::Fixed( const Fixed &old_obj) {
 float	Fixed::toFloat( void) const {
 	float	out;
 
-	out = (_fpv >> _nbFractBits); //
+	out = (_fpv >> _nbFractBits);
 	out += (float)(_fpv & 0xFF) / (1 << _nbFractBits); // only keeping the last 8 bits that are on, we add those as decimals.
 	return (out);
 }
 
 int		Fixed::toInt( void) const {
-	return _fpv >> _nbFractBits; //_fpv / 256; // _fpv / (1 << 8)
+	return _fpv >> _nbFractBits;
 }
 
 int	Fixed::getRawBits(void) const {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return _fpv;
 }
 

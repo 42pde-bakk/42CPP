@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 16:56:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:51:00 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/03 18:14:30 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ public:
 	void	setRawBits( int const raw);
 	~Fixed();
 private:
-	/* data */
 	int		_fpv;
 	static const int	_nbFractBits = 8;
 };
