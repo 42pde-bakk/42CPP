@@ -6,7 +6,7 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/02 18:06:08 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/03 09:30:59 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,3 @@ clean:
 fclean: clean
 
 re: fclean all
-
-test: re
-	./replace testfile std nonstd
