@@ -1,0 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   PowerFist.cpp                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/03 11:59:31 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/03 12:12:32 by pde-bakk      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PowerFist.hpp"
+#include <string>
+#include <iostream>
+
+PowerFist::PowerFist() : AWeapon( "Power Fist", 50, 8 ) {
+}
+
+void	PowerFist::attack() const {
+	std::cout << "\033[1;31m* pschhh... SBAM! *\033[0m" << std::endl;
+}
