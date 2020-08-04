@@ -13,9 +13,8 @@
 #include "SuperTrap.hpp"
 #include <string>
 #include <iostream>
-#define reset "\033[0m"
 
-SuperTrap::SuperTrap( ) : ClapTrap("SuperTrap", "Ninjaaaaaaa"), FragTrap("Ninjaaaaaaa"), ScavTrap("Ninjaaaaaaa"), NinjaTrap("Ninjaaaaaaa") {
+SuperTrap::SuperTrap( ) : ClapTrap("SuperTrap", "Ninjaaaaaaa"), FragTrap("Ninjaaaaaaa"), NinjaTrap("Ninjaaaaaaa") {
 	std::cout << "SuperTrap constructor" << std::endl;
 	_hp = 60;
 	_maxhp = 60;
@@ -26,7 +25,7 @@ SuperTrap::SuperTrap( ) : ClapTrap("SuperTrap", "Ninjaaaaaaa"), FragTrap("Ninjaa
 	_armor_reduc = 5;
 }
 
-SuperTrap::SuperTrap(const std::string name ) : ClapTrap("SuperTrap", name), FragTrap("Ninjaaaaaaa"), ScavTrap("Ninjaaaaaaa"), NinjaTrap("Ninjaaaaaaa") {
+SuperTrap::SuperTrap(const std::string name ) : ClapTrap("SuperTrap", name), FragTrap("Ninjaaaaaaa"), NinjaTrap("Ninjaaaaaaa") {
 	std::cout << "SuperTrap constructor" << std::endl;
 	_hp = 60;
 	_maxhp = 60;

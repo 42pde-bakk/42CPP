@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:47:24 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 18:40:58 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/04 10:26:45 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ScavTrap.hpp"
 #include <string>
 
-class SuperTrap : public FragTrap, public ScavTrap, public NinjaTrap {
+class SuperTrap : public FragTrap, public NinjaTrap {
 public:
 	SuperTrap();
 	SuperTrap(const std::string name);
