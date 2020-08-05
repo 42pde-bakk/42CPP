@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:39:40 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 18:01:41 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/05 09:55:51 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Character::Character() : _name("Feskir"), _ap(40), _weapon(NULL) {
 
 Character::Character( std::string const &name)
 	: _name(name), _ap(40), _weapon(NULL) {
-	
 }
 
 Character::Character( const Character &old_char) {
@@ -68,10 +67,14 @@ void	Character::attack(Enemy *target) {
 		std::cout << _name << " doesnt have enough ap to attack." << std::endl;
 		return ;
 	}
-	std::cout << _name << " attacks " << target->getType()
+	std::cout << this->_name << " attacks " << target->getType()
 				<< " with a " << _weapon->getName() << std::endl;
 	_weapon->attack();
 	target->takeDamage(_weapon->getDamage());
+	if (target->getHP() == 0) {
+		delete target;
+		target = NULL;
+	}
 }
 
 std::ostream&	operator<<(std::ostream& out, const Character& self) {
@@ -82,4 +85,3 @@ std::ostream&	operator<<(std::ostream& out, const Character& self) {
 		out << "wields a " << self.getWeapon()->getName() << std::endl;
 	return out;
 }
-

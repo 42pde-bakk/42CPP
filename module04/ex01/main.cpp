@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:38:51 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 18:03:16 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/05 09:09:27 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,27 @@
 #include <iostream>
 
 void	myowntest() {
-	Character	feskir;
-	PowerFist	pf;
-	SuperMutant	supertf;
-	RadScorpion	scorp;
+	Character*	feskir = new Character("feskir");
+	AWeapon*	pf = new PowerFist();
+	Enemy*		supertf = new SuperMutant();
+	Enemy*		scorp = new RadScorpion();
 
-	feskir.equip(&pf);
-	std::cout << feskir;
+	feskir->equip(pf);
+	std::cout << *feskir;
 	
-	while (supertf.getHP() > 0) {
-		feskir.attack(&supertf);
-		while (feskir.getAP() < feskir.getWeapon()->getAPCost())
-			feskir.recoverAP();
+	while (supertf->getHP() > 0) {
+		feskir->attack(supertf);
+		if (feskir->getAP() < feskir->getWeapon()->getAPCost())
+			feskir->recoverAP();
 	}
+		std::cout << "out of while" << std::endl;
 	
-	scorp.takeDamage(82);
-	scorp.getHP();
-	scorp.takeDamage(10);
+	scorp->takeDamage(81);
+	std::cout << scorp->getHP() << " hp" << std::endl;
+	feskir->attack(scorp);
+	std::cout << scorp->getHP() << " hp" << std::endl;
+
+	delete feskir;//, delete pf;
 }
 
 int	subject_test() {
@@ -61,7 +65,7 @@ int	subject_test() {
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
-	delete me; delete b; delete pr; delete pf;
+	delete me; delete pr; delete pf;
 	return 0;
 }
 

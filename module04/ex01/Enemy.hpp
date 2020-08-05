@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:14:41 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 15:20:14 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/05 09:02:28 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Enemy( const Enemy &old_enemy );
 	Enemy& operator=( const Enemy &other );
 	
-	virtual void takeDamage(int dmg) = 0;
+	virtual void takeDamage(int dmg);
 	std::string	getType() const;
 	int			getHP() const;
 protected:

@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:31:26 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 14:44:28 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/05 09:02:38 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ public:
 	SuperMutant(/* args */);
 	// ~SuperMutant();
 	virtual ~SuperMutant();
-	void	takeDamage(int dmg);
+	// void	takeDamage(int dmg);
 private:
 	/* data */
 };
