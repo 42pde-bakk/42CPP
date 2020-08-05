@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 18:35:38 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 18:36:08 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/05 12:18:04 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,5 @@ class ISpaceMarine
 		virtual void rangedAttack() const = 0;
 		virtual void meleeAttack() const = 0;
 };
-
-
 
 #endif

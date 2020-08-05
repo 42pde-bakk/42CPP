@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/03 18:32:09 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/05 12:19:48 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = purify
+NAME = squad
 
 ifeq ($(shell uname), Linux)
  CXX = g++
@@ -19,9 +19,7 @@ else
 endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-FILES = main.cpp AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp \
-	Enemy.cpp SuperMutant.cpp RadScorpion.cpp \
-	Character.cpp
+FILES = main.cpp AssaultTerminator.cpp Squad.cpp TacticalMarine.cpp
 
 all: $(NAME)
 
