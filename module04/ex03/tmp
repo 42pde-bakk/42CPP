@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ICharacter.hpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/06 11:24:42 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/06 11:28:03 by pde-bakk      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+#include "ICharacter.hpp"
+#include <string>
+
+class Character : public ICharacter {
+public:
+	~Character() {}
+	std::string const & getName() const = 0;
+	void equip(AMateria* m) = 0;
+	void unequip(int idx) = 0;
+	void use(int idx, ICharacter& target) = 0;
+private:
+	AMateria*	_inventory[4];
+};
+
+#endif

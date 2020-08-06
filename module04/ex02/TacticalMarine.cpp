@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 11:11:01 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/05 15:44:16 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/06 09:49:50 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #define red "\033[1;31m"
 #define reset "\033[0m"
 #define yellow "\033[1;33m"
+
+
 
 TacticalMarine::TacticalMarine() {
 	std::cout << yellow << "Tactical Marine ready for battle!" << reset << std::endl;

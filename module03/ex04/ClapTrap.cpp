@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:55:17 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 18:19:06 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/05 11:58:15 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap(const std::string type, const std::string name ) : _name(name
 				<< " has been born"	<< std::endl;
 }
 ClapTrap::ClapTrap( const ClapTrap &old_obj) {
-	std::cout	<< _classname << " " << _colour << _name << reset << "has been cloned." << std::endl;
+	std::cout	<< "testsss " << _classname << " " << _colour << _name << reset << "has been cloned." << std::endl;
 	*this = old_obj;
 }
 
@@ -112,6 +112,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &other) {
 		_ranged_dmg = other._ranged_dmg;
 		_armor_reduc = other._armor_reduc;		
 	}
+	std::cout << "assignation thingy called in ClapTrap" << std::endl;
 	return *this;
 }
 
