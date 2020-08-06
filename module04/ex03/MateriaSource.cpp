@@ -6,13 +6,14 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:59:39 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 15:13:20 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/06 16:43:38 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 #include <iostream>
 #include <string>
+#include <strings.h>
 
 MateriaSource::MateriaSource() {
 	_count = 0;
@@ -35,6 +36,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 		for (int i = 0; i < other._count; i++)
 			this->_materias[i] = other._materias[i]->clone();
 	}
+	return *this;
 }
 
 MateriaSource::~MateriaSource() {

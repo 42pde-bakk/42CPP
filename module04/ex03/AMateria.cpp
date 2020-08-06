@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 10:06:06 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:40:51 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/06 16:38:07 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AMateria::AMateria() : _type("AMateria"), _xp(0) {
 AMateria::AMateria(std::string const & type) : _type(type), _xp(0) {
 }
 
-AMateria::AMateria(const AMateria& other) {
+AMateria::AMateria(const AMateria& other){
 	*this = other;
 }
 

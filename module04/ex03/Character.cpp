@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 11:28:29 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 13:59:40 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/06 16:36:00 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #define red "\033[1;31m"
 #define reset "\033[0m"
 #define yellow "\033[1;33m"
+#include <strings.h> //only for bzero on g++, clang++ doesnt need
 
 Character::Character() : _spellcount(0), _name("feskir") {
 	bzero(this->_inventory, 5 * sizeof(AMateria*));

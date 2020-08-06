@@ -23,7 +23,7 @@ Ice::Ice() {
 	this->_xp = 0;
 }
 
-Ice::Ice(const Ice& other) {
+Ice::Ice(const Ice& other) : AMateria() {
 	*this = other;
 }
 

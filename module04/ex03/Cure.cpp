@@ -24,7 +24,7 @@ Cure::Cure() {
 	std::cout << yellow << "Cure regular constructor called" << reset << std::endl;
 }
 
-Cure::Cure(const Cure& other) {
+Cure::Cure(const Cure& other) : AMateria() {
 	std::cout << yellow << "Cure copy constructor called" << reset << std::endl;
 	*this = other;
 }
