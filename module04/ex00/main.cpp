@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:31:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 11:51:45 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 12:05:41 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ int	main( void) {
 	subjecttest();
 	std::cout << std::endl << "\033[1;33mNow its time for my own tests:\033[0;m" << std::endl;
 	mytest();
+	// system("leaks sorcerer.out");
 }

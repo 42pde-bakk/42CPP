@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:38:51 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/05 09:09:27 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 12:06:29 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	myowntest() {
 	feskir->attack(scorp);
 	std::cout << scorp->getHP() << " hp" << std::endl;
 
-	delete feskir;//, delete pf;
+	delete feskir; delete pf;
 }
 
 int	subject_test() {

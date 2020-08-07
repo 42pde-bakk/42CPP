@@ -18,7 +18,7 @@
 #define reset "\033[0m"
 #define yellow "\033[1;33m"
 
-Ice::Ice() {
+Ice::Ice() : AMateria() {
 	this->_type = "ice";
 	this->_xp = 0;
 }
@@ -46,5 +46,5 @@ Ice*			Ice::clone() const {
 
 void					Ice::use(ICharacter& target) {
 	std::cout << blue << "* shoots an ice bolt at " << target.getName() << " *" << reset << std::endl;
-	AMateria::use(target);
+	this->_xp += 10;
 }

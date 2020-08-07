@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 11:28:29 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 16:36:00 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/07 12:09:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ Character&	Character::operator=(const Character& other) {
 }
 
 Character::~Character() {
-	std::cout << red << this->_name << " waves goodbye!" << reset << std::endl;	
 }
 
 std::string	const&	Character::getName() const {
@@ -58,7 +57,7 @@ void	Character::equip(AMateria* m) {
 			break ;
 		}
 	}
-	std::cout << yellow << this->_name << " has equipped " << m->getType() << "." << std::endl;
+	// std::cout << yellow << this->_name << " has equipped " << m->getType() << " at index " << this->_spellcount - 1 <<  "." << std::endl;
 }
 
 void	Character::unequip(int idx) {
@@ -67,7 +66,7 @@ void	Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	if (idx < 0 || idx >= 4)
+	if (idx < 0 || idx >= 4 || this->_inventory[idx] == NULL)
 		return ;
 	this->_inventory[idx]->use(target);
 }

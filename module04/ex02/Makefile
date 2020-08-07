@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/05 12:19:48 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/07 12:06:56 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = squad
+NAME = squad.out
 
 ifeq ($(shell uname), Linux)
  CXX = g++
@@ -24,10 +24,10 @@ FILES = main.cpp AssaultTerminator.cpp Squad.cpp TacticalMarine.cpp
 all: $(NAME)
 
 $(NAME):
-	$(CXX) $(FILES) $(FLAGS) -o $(NAME).out
+	$(CXX) $(FILES) $(FLAGS) -o $(NAME)
 
 clean:
-	rm -f $(NAME).out
+	rm -f $(NAME)
 
 fclean: clean
 

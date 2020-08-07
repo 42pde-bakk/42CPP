@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 10:06:06 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 16:38:07 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/07 10:56:40 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ unsigned int		AMateria::getXP() const {
 }
 
 void					AMateria::use(ICharacter& target) {
+	std::cout << "amateria function instead of cure/ice" << std::endl;
 	(void)target;
 	this->_xp += 10;
 }

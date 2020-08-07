@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 10:00:57 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 14:15:06 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 11:09:40 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ICharacter.hpp"
 #include <string>
 
-class	Ice : public AMateria {
+class Ice : public AMateria {
 	public:
 		Ice();
 		Ice(const Ice& other);

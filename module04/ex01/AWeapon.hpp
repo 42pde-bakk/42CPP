@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:53:34 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 17:30:06 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 12:02:35 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 class AWeapon {
 	public:
-		AWeapon(); //dont use this one pls
 		AWeapon(std::string const & name, int damage, int apcost);
 		AWeapon( const AWeapon &old_weapon );
 		AWeapon& operator=( const AWeapon &other );
@@ -32,6 +31,7 @@ class AWeapon {
 					apcost_;
 
 	private:
+		AWeapon();
 };
 
 

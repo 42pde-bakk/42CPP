@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:14:41 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/05 09:02:28 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 12:02:51 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 class Enemy {
 public:
-	Enemy(/* args */);
 	Enemy(int hp, std::string const &type);
 	virtual ~Enemy();
 	Enemy( const Enemy &old_enemy );
@@ -28,6 +27,8 @@ public:
 protected:
 	int			hp_;
 	std::string	type_;
+private:
+	Enemy(/* args */);
 };
 
 #endif

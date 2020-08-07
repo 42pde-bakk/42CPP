@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/03 16:35:27 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/07 12:05:55 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fire
+NAME = fire.out
 
 ifeq ($(shell uname), Linux)
  CXX = g++
@@ -26,10 +26,10 @@ FILES = main.cpp AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp \
 all: $(NAME)
 
 $(NAME):
-	$(CXX) $(FILES) $(FLAGS) -o $(NAME).out
+	$(CXX) $(FILES) $(FLAGS) -o $(NAME)
 
 clean:
-	rm -f $(NAME).out
+	rm -f $(NAME)
 
 fclean: clean
 

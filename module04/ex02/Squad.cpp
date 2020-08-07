@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 10:47:16 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/05 16:03:05 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 12:08:08 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@ Squad::Squad() {
 	this->_count = 0;
 	this->_capacity = 5;
 	this->_marines = new ISpaceMarine*[_capacity];
-	std::cout << "Squad of size " << this->_count << "/" << _capacity << " at the ready" << std::endl;
+	// std::cout << "Squad of size " << this->_count << "/" << _capacity << " at the ready" << std::endl;
 }
 
 Squad::Squad(int size) {
 	this->_count = 0;
 	this->_capacity = size;
 	this->_marines = new ISpaceMarine*[_capacity];
-	std::cout << "Squad of size " << this->_count << "/" << _capacity << " at the ready" << std::endl;
+	// std::cout << "Squad of size " << this->_count << "/" << _capacity << " at the ready" << std::endl;
 }
 
 Squad::Squad( const Squad &old_squad) {
-	std::cout << "Squad copy constructor called!" << std::endl;
+	// std::cout << "Squad copy constructor called!" << std::endl;
 	this->_count = old_squad._count;
 	this->_capacity = old_squad._capacity;
 	this->_marines = new ISpaceMarine*[this->_capacity];
 	for (int i = 0; i < this->_count; i++)
 		this->_marines[i] = old_squad._marines[i]->clone();
 	// *this = old_squad;
-	std::cout << "Squad of size " << this->_count << "/" << _capacity << " at the ready" << std::endl;
+	// std::cout << "Squad of size " << this->_count << "/" << _capacity << " at the ready" << std::endl;
 
 }
 

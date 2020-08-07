@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 14:59:39 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/06 16:43:38 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/07 11:46:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,15 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 }
 
 MateriaSource::~MateriaSource() {
-	
+	for (int i = 0; i < this->_count; i++) {
+		delete this->_materias[i];
+	}
 }
 
 void	MateriaSource::learnMateria(AMateria* m) {
 	if (m == NULL || this->_count >= 4)
 		return ;
-	this->_materias[this->_count] = m->clone();
+	this->_materias[this->_count] = m;
 	this->_count += 1;
 }
 
