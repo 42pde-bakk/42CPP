@@ -6,13 +6,17 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:18:58 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:02:56 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 16:30:13 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 #include <iostream>
 #include <string>
+
+Enemy::Enemy() {
+	
+}
 
 Enemy::Enemy(int hp, std::string const &type)
 	: hp_(hp), type_(type) {

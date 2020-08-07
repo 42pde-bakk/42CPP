@@ -17,14 +17,14 @@
 
 class	Peon : public Victim {
 	public:
-	Peon();
 	Peon( const std::string &name );
-	// Peon( const Peon &old_Peon );
-	// Peon& operator=( const Peon &other );
-	~Peon();
-	
-	// const std::string	&get_name() const;
+	Peon( const Peon &old_Peon );
+	Peon& operator=( const Peon &other );
+	virtual ~Peon(); //this is retarded and bad practice
+
 	void				getPolymorphed() const;
+private:
+	Peon();
 	
 };
 // std::ostream&	operator<<(std::ostream& out, const Peon& self);

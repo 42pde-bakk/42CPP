@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Victim.hpp                                         :+:    :+:            */
+/*   Stooge.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:11:43 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 14:38:02 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 14:40:06 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef STOOGE_HPP
+# define STOOGE_HPP
 # include <string>
+#include "Victim.hpp"
 
-class	Victim {
-public:
-	Victim( const std::string &name );
-	Victim( const Victim &old_Victim );
-	Victim& operator=( const Victim &other );
-	virtual ~Victim();
+class	Stooge : public Victim {
+	public:
+	Stooge( const std::string &name );
+	Stooge( const Stooge &old_Stooge );
+	Stooge& operator=( const Stooge &other );
+	virtual ~Stooge(); //this is retarded and bad practice
 	
-	const std::string	&get_name() const;
-	virtual void		getPolymorphed() const;
-
-protected:
-	std::string	_name;
-	Victim();
+	void				getPolymorphed() const;
 
 private:	
+	Stooge();
 };
-std::ostream&	operator<<(std::ostream& out, const Victim& self);
+// std::ostream&	operator<<(std::ostream& out, const Stooge& self);
 
 #endif

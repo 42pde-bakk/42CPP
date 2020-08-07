@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:14:41 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:02:51 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 16:18:32 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ public:
 	std::string	getType() const;
 	int			getHP() const;
 protected:
+	Enemy(/* args */);
 	int			hp_;
 	std::string	type_;
 private:
-	Enemy(/* args */);
 };
 
 #endif

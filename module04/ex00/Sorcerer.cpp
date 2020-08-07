@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:16:00 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 11:21:54 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 14:34:03 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #include <string>
 #include <iostream>
 
-Sorcerer::Sorcerer() : _name("Stregobor"), _title("Master Irion") {
-	std::cout << _name << ", " << _title << ", is born!" << std::endl;
-}
+Sorcerer::Sorcerer(){ }
 
 Sorcerer::Sorcerer(const std::string &name, const std::string &title) : _name(name), _title(title) {
 	std::cout << _name << ", " << _title << ", is born!" << std::endl;
@@ -28,8 +26,8 @@ Sorcerer::Sorcerer( const Sorcerer &old_sorcerer) {
 
 Sorcerer&	Sorcerer::operator=(const Sorcerer &other) {
 	if (this != &other) {
-	_title = other._title;
-	_name = other._name;
+		_title = other._title;
+		_name = other._name;
 	}
 	return *this;
 }

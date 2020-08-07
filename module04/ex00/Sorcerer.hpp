@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:11:43 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 09:42:07 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 14:32:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "Victim.hpp"
 
 class	Sorcerer {
-	public:
-	Sorcerer();
+public:
 	Sorcerer( const std::string &name, const std::string &title );
 	Sorcerer( const Sorcerer &old_sorcerer );
 	Sorcerer& operator=( const Sorcerer &other );
@@ -27,7 +26,8 @@ class	Sorcerer {
 	const std::string	&get_title() const;
 	void				polymorph(Victim const &) const;
 
-	private:
+private:
+	Sorcerer();
 	std::string	_name,
 				_title;
 	

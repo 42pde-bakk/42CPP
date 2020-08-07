@@ -17,6 +17,23 @@
 PowerFist::PowerFist() : AWeapon( "Power Fist", 50, 8 ) {
 }
 
+PowerFist::PowerFist( const PowerFist &old_weapon) {
+	*this = old_weapon;
+}
+
+PowerFist& PowerFist::operator=(const PowerFist &other) {
+	if (this != &other) {
+		this->name_ = other.name_;
+		this->dmg_ = other.dmg_;
+		this->apcost_ = other.apcost_;
+	}
+	return *this;
+}
+
+PowerFist::~PowerFist() {
+
+}
+
 void	PowerFist::attack() const {
 	std::cout << "\033[1;31m* pschhh... SBAM! *\033[0m" << std::endl;
 }

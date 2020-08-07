@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:59:31 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:02:26 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 16:30:24 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 #include <string>
 #include <iostream>
 
-// made this one private so it cant be used
-// AWeapon::AWeapon() {
-// 	name_ = "AWeapon";
-// 	dmg_ = 0;
-// 	apcost_ = 100;
-// }
+AWeapon::AWeapon() {
+	
+}
 
 AWeapon::AWeapon(std::string const & name, int damage, int apcost)
 					: name_(name), dmg_(damage), apcost_(apcost) {

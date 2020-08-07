@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.cpp                                        :+:    :+:            */
+/*   BigUglyDragon.cpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/03 11:59:31 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/03 12:12:32 by pde-bakk      ########   odam.nl         */
+/*   Created: 2020/08/03 13:32:11 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/07 16:19:01 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "BigUglyDragon.hpp"
 #include <string>
 #include <iostream>
 
-PlasmaRifle::PlasmaRifle() : AWeapon( "Plasma Rifle", 21, 5 ) {
+BigUglyDragon::BigUglyDragon() : Enemy(200, "BigUglyDragon") {
+	std::cout <<  "* dragonsound *" << std::endl;
 }
 
-PlasmaRifle::PlasmaRifle( const PlasmaRifle &old_weapon) {
-	*this = old_weapon;
+BigUglyDragon::BigUglyDragon(const BigUglyDragon &other) {
+	*this = other;
 }
 
-PlasmaRifle& PlasmaRifle::operator=(const PlasmaRifle &other) {
+BigUglyDragon& BigUglyDragon::operator=( const BigUglyDragon &other) {
 	if (this != &other) {
-		name_ = other.name_;
-		dmg_ = other.dmg_;
-		apcost_ = other.apcost_;
+		this->type_ = other.type_;
+		this->hp_ = other.hp_;
 	}
 	return *this;
 }
 
-PlasmaRifle::~PlasmaRifle() {
-
-}
-
-void	PlasmaRifle::attack() const {
-	std::cout << "\033[1;31m* piouuu piouuu piouuu *\033[0m" << std::endl;
+BigUglyDragon::~BigUglyDragon() {
+	std::cout <<  "* dying dragon sound *" << std::endl;
 }

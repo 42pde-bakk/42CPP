@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   SuperMutant.hpp                                    :+:    :+:            */
+/*   Club.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/03 13:31:26 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 16:17:11 by pde-bakk      ########   odam.nl         */
+/*   Created: 2020/08/03 11:53:34 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/03 12:03:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERMUTANT_HPP
-# define SUPERMUTANT_HPP
+#ifndef CLUB_HPP
+# define CLUB_HPP
+#include "AWeapon.hpp"
 #include <string>
-#include "Enemy.hpp"
 
-class SuperMutant : public Enemy {
-public:
-	SuperMutant(/* args */);
-	SuperMutant( const SuperMutant &other );
-	SuperMutant& operator=( const SuperMutant &other );
-	virtual ~SuperMutant();
-	void	takeDamage(int dmg);
-private:
-	/* data */
+class Club : public AWeapon {
+	public:
+		Club();
+		Club( const Club &old_weapon );
+		Club& operator=( const Club &other );
+		virtual ~Club();
+
+		void	attack() const;
 };
-
 
 #endif

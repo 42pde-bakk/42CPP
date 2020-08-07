@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 15:39:40 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/05 09:55:51 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 15:11:22 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,12 @@ void	Character::attack(Enemy *target) {
 	}
 	std::cout << this->_name << " attacks " << target->getType()
 				<< " with a " << _weapon->getName() << std::endl;
-	_weapon->attack();
+	this->_weapon->attack();
 	target->takeDamage(_weapon->getDamage());
-	if (target->getHP() == 0) {
+	this->_ap -= this->_weapon->getAPCost();
+	if (this->_ap < 0)
+		this->_ap = 0;
+	if (target->getHP() <= 0) {
 		delete target;
 		target = NULL;
 	}

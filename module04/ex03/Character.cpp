@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 11:28:29 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:09:06 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 17:04:31 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,38 @@ Character::Character(const std::string& name) : _spellcount(0), _name(name) {
 }
 
 Character::Character(const Character& other) {
-	*this = other;
+	this->_spellcount = other._spellcount;
+	this->_name = other._name;
+	bzero(this->_inventory, 5 * sizeof(AMateria*));
+	
+	for (int i = 0; i < 4; i++) {
+		if (other._inventory[i] != NULL)
+			this->_inventory[i] = other._inventory[i]->clone();
+	}
 }
 
 Character&	Character::operator=(const Character& other) {
+	for (int i = 0; this->_inventory[i]; i++) {
+		delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
+	this->_name = other._name;
+	this->_spellcount = other._spellcount;
 	if (this != &other) {
 		this->_spellcount = other._spellcount;
 		this->_name = other._name;
 		for (int i = 0; i < 4; i++) {
-			this->_inventory[i] = other._inventory[i];
+			this->_inventory[i] = other._inventory[i]->clone();
 		}
 	}
 	return *this;
 }
 
 Character::~Character() {
+	for (int i = 0; this->_inventory[i]; i++) {
+		delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
 }
 
 std::string	const&	Character::getName() const {
@@ -52,17 +69,18 @@ std::string	const&	Character::getName() const {
 void	Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (this->_inventory[i] == NULL) {
-			this->_inventory[i] = m;
+			this->_inventory[i] = m->clone();
 			this->_spellcount += 1;
 			break ;
 		}
 	}
-	// std::cout << yellow << this->_name << " has equipped " << m->getType() << " at index " << this->_spellcount - 1 <<  "." << std::endl;
 }
 
 void	Character::unequip(int idx) {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4) {
+		delete this->_inventory[idx];
 		this->_inventory[idx] = NULL;
+	}
 }
 
 void	Character::use(int idx, ICharacter& target) {

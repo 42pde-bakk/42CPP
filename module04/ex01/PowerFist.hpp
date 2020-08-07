@@ -18,6 +18,10 @@
 class PowerFist : public AWeapon {
 	public:
 		PowerFist();
+		PowerFist( const PowerFist &old_weapon );
+		PowerFist& operator=( const PowerFist &other );
+		virtual ~PowerFist();
+
 		void	attack() const;
 };
 

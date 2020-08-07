@@ -6,13 +6,14 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:31:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:05:41 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 14:38:31 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "Stooge.hpp"
 #include <iostream>
 #include <string>
 
@@ -27,17 +28,17 @@ int	subjecttest() {
 }
 
 int	mytest() {
-	Sorcerer	Stregobor;
-	Victim		Renfri;
+	Sorcerer	Stregobor("Stregobor", "Master Irion");
+	Victim		Renfri("Renfri");
 	Peon		Peoneer("kutwijf");
 	Peon		Peoneer2(Peoneer);
+	Stooge		Stogey("noname");
 	
-	std::cout << Stregobor;
-	std::cout << Renfri;
-	std::cout << Peoneer;
+	std::cout << Stregobor << Renfri << Peoneer << Stogey;
 	
 	Stregobor.polymorph(Renfri);
 	Stregobor.polymorph(Peoneer);
+	Stregobor.polymorph(Stogey);
 	return 0;
 }
 

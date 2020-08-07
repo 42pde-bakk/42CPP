@@ -28,7 +28,7 @@ Victim::Victim( const Victim &old_Victim) {
 
 Victim&	Victim::operator=(const Victim &other) {
 	if (this != &other) {
-	_name = other._name;
+		_name = other._name;
 	}
 	return *this;
 }

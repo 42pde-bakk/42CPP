@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 13:35:41 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:08:52 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 17:04:16 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ int	peer_test() {
 		peer.use(0, jimbo);
 		jimbo.use(0, jimbo);
 	}
-	std::cout << "After my forloop" << std::endl;
 	peer.use(2, jimbo);
 	peer.unequip(0);
+	jimbo.unequip(0);
 	jimbo.unequip(0);
 	for (int i = 0; i < 3; i++) {
 		peer.use(0, jimbo);
@@ -76,14 +76,13 @@ int	peer_test() {
 	}
 	delete tmp;
 	delete tmp2;
-	
 	delete source;
 	return 0;
 }
 
 int	main( void) {
 	subject_test();
-	// peer_test();
+	peer_test();
 	system("leaks bocal-fantasy.out");
 	return 0;
 }

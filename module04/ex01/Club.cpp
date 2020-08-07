@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.cpp                                        :+:    :+:            */
+/*   Club.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
@@ -10,30 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "Club.hpp"
 #include <string>
 #include <iostream>
 
-PlasmaRifle::PlasmaRifle() : AWeapon( "Plasma Rifle", 21, 5 ) {
+Club::Club() : AWeapon( "Club", 5, 1 ) {
 }
 
-PlasmaRifle::PlasmaRifle( const PlasmaRifle &old_weapon) {
+Club::Club( const Club &old_weapon) {
 	*this = old_weapon;
 }
 
-PlasmaRifle& PlasmaRifle::operator=(const PlasmaRifle &other) {
+Club& Club::operator=(const Club &other) {
 	if (this != &other) {
-		name_ = other.name_;
-		dmg_ = other.dmg_;
-		apcost_ = other.apcost_;
+		this->name_ = other.name_;
+		this->dmg_ = other.dmg_;
+		this->apcost_ = other.apcost_;
 	}
 	return *this;
 }
 
-PlasmaRifle::~PlasmaRifle() {
+Club::~Club() {
 
 }
 
-void	PlasmaRifle::attack() const {
-	std::cout << "\033[1;31m* piouuu piouuu piouuu *\033[0m" << std::endl;
+void	Club::attack() const {
+	std::cout << "\033[1;31m* boom you just got hit by a club *\033[0m" << std::endl;
 }

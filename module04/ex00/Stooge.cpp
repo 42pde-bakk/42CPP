@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.cpp                                       :+:    :+:            */
+/*   Stooge.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Stooge.hpp"
 #include <string>
 #include <iostream>
 
-Peon::Peon() : Victim("peoneer") {
+Stooge::Stooge() : Victim("Stoogeeer") {
 	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon(const std::string &name) : Victim(name) {
-	std::cout << "Zog zog." << std::endl;
+Stooge::Stooge(const std::string &name) : Victim(name) {
+	std::cout << "stooge constructor" << std::endl;
 }
 
-Peon::Peon( const Peon &old_peon) {
-	*this = old_peon;
+Stooge::Stooge( const Stooge &old_Stooge) {
+	*this = old_Stooge;
 }
 
-Peon&	Peon::operator=(const Peon &other) {
+Stooge&	Stooge::operator=(const Stooge &other) {
 	if (this != &other) {
 		_name = other._name;
 	}
 	return *this;
 }
 
-void	Peon::getPolymorphed() const {
-	std::cout << _name << " has been turned into a pink pony!" << std::endl;
+void	Stooge::getPolymorphed() const {
+	std::cout << _name << " has been turned into whatever a stooge gets turned into" << std::endl;
 }
 
-Peon::~Peon() {
-	std::cout << "Bleuark..." << std::endl;
+Stooge::~Stooge() {
+	std::cout << "stooge out" << std::endl;
 }

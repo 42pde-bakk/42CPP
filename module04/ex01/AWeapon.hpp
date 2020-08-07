@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:53:34 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:02:35 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/07 15:17:55 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ class AWeapon {
 		virtual void attack() const = 0;
 
 	protected:
+		AWeapon();
 		std::string	name_;
 		int			dmg_,
 					apcost_;
 
 	private:
-		AWeapon();
 };
 
 
