@@ -1,0 +1,3 @@
+C:/Users/Feski/CLionProjects/42CPP/module05/ex01/cmake-build-debug/CMakeFiles/Form.dir
+C:/Users/Feski/CLionProjects/42CPP/module05/ex01/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Feski/CLionProjects/42CPP/module05/ex01/cmake-build-debug/CMakeFiles/rebuild_cache.dir
