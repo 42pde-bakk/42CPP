@@ -39,13 +39,11 @@ Character::Character(const Character& other) {
 }
 
 Character&	Character::operator=(const Character& other) {
-	for (int i = 0; this->_inventory[i]; i++) {
-		delete this->_inventory[i];
-		this->_inventory[i] = NULL;
-	}
-	this->_name = other._name;
-	this->_spellcount = other._spellcount;
 	if (this != &other) {
+		for (int i = 0; this->_inventory[i]; i++) {
+			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
 		this->_spellcount = other._spellcount;
 		this->_name = other._name;
 		for (int i = 0; i < 4; i++) {
