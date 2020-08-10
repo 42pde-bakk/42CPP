@@ -21,6 +21,7 @@ public:
   void increaseGrade();
   void decreaseGrade();
   void signForm(Form &form) const;
+  void executeForm(const Form &form) const;
 
   class GradeTooHighException : public std::runtime_error {
   public:

@@ -21,12 +21,12 @@ public:
 
     class GradeTooHighException: public std::runtime_error {
     public:
-        explicit GradeTooHighException(const char* what);
+        explicit GradeTooHighException();
     };
 
     class GradeTooLowException: public std::runtime_error {
     public:
-        explicit GradeTooLowException(const char* what);
+        explicit GradeTooLowException();
     };
 private:
     Bureaucrat();

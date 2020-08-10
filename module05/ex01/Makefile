@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/06 16:43:15 by peer          ########   odam.nl          #
+#    Updated: 2020/08/10 13:34:48 by peer          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat.out
+NAME = form.out
 
 ifeq ($(shell uname), Linux)
  CXX = g++
@@ -19,7 +19,7 @@ else
 endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+FILES = main.cpp Bureaucrat.cpp Form.cpp
 
 all: $(NAME)
 

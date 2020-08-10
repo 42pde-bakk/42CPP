@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/06 13:35:41 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 17:04:16 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/10 13:01:36 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ int	peer_test() {
 int	main( void) {
 	subject_test();
 	peer_test();
-	system("leaks bocal-fantasy.out");
+	// system("leaks bocal-fantasy.out");
 	return 0;
 }

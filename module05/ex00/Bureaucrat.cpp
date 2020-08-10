@@ -57,8 +57,9 @@ std::ostream&   operator<<(std::ostream& out, const Bureaucrat& self) {
     return out;
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(const char *what):
-        std::runtime_error(what) {}
+Bureaucrat::GradeTooHighException::GradeTooHighException() 
+	: std::runtime_error("Grade too high") { }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(const char *what):
-        std::runtime_error(what) {}
+Bureaucrat::GradeTooLowException::GradeTooLowException() 
+	: std::runtime_error("Grade too low") { }
+	
