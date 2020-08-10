@@ -6,7 +6,7 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/10 18:39:30 by peer          ########   odam.nl          #
+#    Updated: 2020/08/10 21:52:11 by peer          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ else
 endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-FILES = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+FILES = main.cpp Bureaucrat.cpp Form.cpp \
+	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 all: $(NAME)
 
