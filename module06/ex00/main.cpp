@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 12:38:57 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/11 16:06:23 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/11 18:20:31 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 #define INT 1
 #define FLOAT 2
 #define DOUBLE 3
-#define NAN 4
-#define INF 5
-#define MININF 6
+#define OTHER 4
 #define ERR -1
+std::string	g_nanid;
+bool	g_int_imp = 0;
 
 class NonDisplayableException : public std::runtime_error {
 	public:
@@ -54,51 +54,43 @@ void	convert_float(const char* input, char *c, int *i, float *f, double *d) {
 	*f = std::atof(input);
 	*c = static_cast<char>(*f);
 	*i = static_cast<int>(*f);
+	std::cout << "i: " << *i << std::endl;
 	*d = static_cast<double>(*f);
 }
 
 void	convert_double(const char* input, char *c, int *i, float *f, double *d) {
 	*d = std::atof(input);
+	if (strcmp(input, "inff") == 0 || strcmp(input, "+inff") == 0)
+		*d = 0.0 / 0.0;
 	*c = static_cast<char>(*d);
 	*i = static_cast<float>(*d);
 	*f = static_cast<double>(*d);
 }
 
-void	print_nan(const char* input, char *c, int *i, float *f, double *d) {
-	(void)input; (void)c; (void)i; (void)f; (void)d;
-	std::cout << "char: impossible" << std::endl
-			<< "int: impossible" << std::endl
-			<< "float: nanf" << std::endl
-			<< "double: nan" << std::endl;
-}
-
-void	print_inf(const char* input, char *c, int *i, float *f, double *d) {
-	(void)input; (void)c; (void)i; (void)f; (void)d;
-	std::cout << "char: impossible" << std::endl
-			<< "int: impossible" << std::endl
-			<< "float: inff" << std::endl
-			<< "double: inf" << std::endl;
-}
-
-void	print_mininf(const char* input, char *c, int *i, float *f, double *d) {
-	(void)input; (void)c; (void)i; (void)f; (void)d;
-	std::cout << "char: impossible" << std::endl
-			<< "int: impossible" << std::endl
-			<< "float: -inff" << std::endl
-			<< "double: -inf" << std::endl;
+void	convert_other(const char* input, char *c, int *i, float *f, double *d) {
+	(void)input;
+	if (g_nanid == "inf" || g_nanid == "inff" || g_nanid == "+inf" || g_nanid == "+inff")
+		*f = 1.0 / 0.0;
+	else if (g_nanid == "-inf" || g_nanid == "-inff")
+		*f = -1.0 / 0.0;
+	else if (g_nanid == "nan" || g_nanid == "nanf")
+		*f = 0.0 / 0.0;
+	g_int_imp = 1;
+	*c = static_cast<char>(*f);
+	*i = static_cast<int>(*f);
+	*d = static_cast<double>(*f);
 }
 
 int	detect_type(std::string input, int *decimals) {
 	int i = 0;
 	int isfloat = 0;
-
-	if (std::strcmp(input.c_str(), "nan") == 0 || std::strcmp(input.c_str(), "nanf") == 0)
-		return NAN;
-	if (std::strcmp(input.c_str(), "inf") == 0 || std::strcmp(input.c_str(), "+inf") == 0 ||
-		std::strcmp(input.c_str(), "inff") == 0 || std::strcmp(input.c_str(), "+inff") == 0)
-		return INF;
-	if (std::strcmp(input.c_str(), "-inf") == 0 || std::strcmp(input.c_str(), "-inff") == 0)
-		return MININF;
+	std::string others[] = {"inf", "inff", "+inf", "+inff", "-inf", "-inff", "nan", "nanf" };
+	for (int n = 0; n < 8; n++) {
+		if (input == others[n]) {
+			g_nanid = others[n];
+			return OTHER;
+		}
+	}
 	if (input.length() == 1 && !isdigit(input[0]))
 		return CHAR;
 	while (input[i]) {
@@ -138,13 +130,11 @@ int main(int argc, char **argv) {
 	float f = 0.0f;
 	double d = 0.0;
 	int decimals = 0;
-	static t_make_funct makeFormFuncts[7] = {	convert_char,
+	static t_make_funct makeFormFuncts[5] = {	convert_char,
 												convert_int,
 												convert_float,
 												convert_double,
-												print_nan,
-												print_inf,
-												print_mininf };
+												convert_other	};
 	int type = detect_type(argv[1], &decimals);
 	if (decimals == 0)
 		decimals += 1;
@@ -154,10 +144,10 @@ int main(int argc, char **argv) {
 	}
 	else
 		makeFormFuncts[type](argv[1], &c, &i, &f, &d);
-	if (type > 3)
-		return 0;
 	try {
 		std::cout << "char: ";
+		if (!c)
+			throw ImpossibleException();
 		if (!isprint(c))
 			throw NonDisplayableException();
 		std::cout << c << std::endl;
@@ -165,7 +155,15 @@ int main(int argc, char **argv) {
 	catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "int: " << i << std::endl;
+	try {
+		std::cout << "int: ";
+		if (g_int_imp)
+			throw ImpossibleException();
+		std::cout << i << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 	std::cout << "float: " << f << 'f' <<  std::endl;
 	std::cout << "double: " << d << std::endl;
 	return 0;
