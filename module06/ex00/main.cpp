@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 12:38:57 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/11 22:59:45 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/11 23:08:50 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	convert_char(const char* input, char *c, int *i, float *f, double *d) {
 
 void	convert_int(const char* input, char *c, int *i, float *f, double *d) {
 	long double tmp = std::atof(input);
-	std::cout << "int conv: i=" << *i << std::endl;
 	if (tmp > __INT32_MAX__ || tmp < -1 * __INT32_MAX__ - 1)
 		g_int_imp = true;
 	*i = static_cast<int>(tmp);
@@ -152,7 +151,6 @@ int main(int argc, char **argv) {
 												convert_double,
 												convert_other	};
 	int type = detect_type(argv[1], &decimals);
-	std::cout << "type = " << type << std::endl;
 	if (decimals == 0)
 		decimals += 1;
 	std::cout << std::setprecision(decimals) << std::fixed;
@@ -185,7 +183,7 @@ int main(int argc, char **argv) {
 		std::cout << "float: ";
 		if (g_float_imp)
 			throw ImpossibleException();
-		std::cout << f << std::endl;
+		std::cout << f << 'f' << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
