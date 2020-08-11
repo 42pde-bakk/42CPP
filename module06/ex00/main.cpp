@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 12:38:57 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/11 18:20:31 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/11 22:59:45 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <exception>
 #include <stdlib.h>
+#include <limits>
 
 #define CHAR 0
 #define INT 1
@@ -24,7 +25,9 @@
 #define OTHER 4
 #define ERR -1
 std::string	g_nanid;
-bool	g_int_imp = 0;
+bool	g_int_imp = false;
+bool	g_float_imp = false;
+bool	g_double_imp = false;
 
 class NonDisplayableException : public std::runtime_error {
 	public:
@@ -44,27 +47,40 @@ void	convert_char(const char* input, char *c, int *i, float *f, double *d) {
 }
 
 void	convert_int(const char* input, char *c, int *i, float *f, double *d) {
-	*i = std::atoi(input);
-	*c = static_cast<char>(*i);
-	*f = static_cast<float>(*i);
-	*d = static_cast<double>(*i);
+	long double tmp = std::atof(input);
+	std::cout << "int conv: i=" << *i << std::endl;
+	if (tmp > __INT32_MAX__ || tmp < -1 * __INT32_MAX__ - 1)
+		g_int_imp = true;
+	*i = static_cast<int>(tmp);
+	*c = static_cast<char>(tmp);
+	*f = static_cast<float>(tmp);
+	*d = static_cast<double>(tmp);
 }
 
 void	convert_float(const char* input, char *c, int *i, float *f, double *d) {
-	*f = std::atof(input);
-	*c = static_cast<char>(*f);
-	*i = static_cast<int>(*f);
-	std::cout << "i: " << *i << std::endl;
-	*d = static_cast<double>(*f);
+	long double tmp = std::atof(input);
+	if (tmp > __INT32_MAX__ || tmp < -1 * __INT32_MAX__ - 1)
+		g_int_imp = true;
+	if (tmp > __FLT_MAX__ || tmp < -1 * __FLT_MAX__ - 1)
+		g_float_imp = true;
+	*f = static_cast<float>(tmp);
+	*c = static_cast<char>(tmp);
+	*i = static_cast<int>(tmp);
+	*d = static_cast<double>(tmp);
 }
 
 void	convert_double(const char* input, char *c, int *i, float *f, double *d) {
-	*d = std::atof(input);
-	if (strcmp(input, "inff") == 0 || strcmp(input, "+inff") == 0)
-		*d = 0.0 / 0.0;
-	*c = static_cast<char>(*d);
-	*i = static_cast<float>(*d);
-	*f = static_cast<double>(*d);
+	long double tmp = std::atof(input);
+	if (tmp > __INT32_MAX__ || tmp < -1 * __INT32_MAX__ - 1)
+		g_int_imp = true;
+	if (tmp > __FLT_MAX__ || tmp < -1 * __FLT_MAX__ - 1)
+		g_float_imp = true;
+	if (tmp > __DBL_MAX__ || tmp < -1 * __DBL_MAX__ - 1)
+		g_double_imp = true;
+	*d = static_cast<double>(tmp);
+	*c = static_cast<char>(tmp);
+	*i = static_cast<float>(tmp);
+	*f = static_cast<double>(tmp);
 }
 
 void	convert_other(const char* input, char *c, int *i, float *f, double *d) {
@@ -75,7 +91,7 @@ void	convert_other(const char* input, char *c, int *i, float *f, double *d) {
 		*f = -1.0 / 0.0;
 	else if (g_nanid == "nan" || g_nanid == "nanf")
 		*f = 0.0 / 0.0;
-	g_int_imp = 1;
+	g_int_imp = true;
 	*c = static_cast<char>(*f);
 	*i = static_cast<int>(*f);
 	*d = static_cast<double>(*f);
@@ -136,6 +152,7 @@ int main(int argc, char **argv) {
 												convert_double,
 												convert_other	};
 	int type = detect_type(argv[1], &decimals);
+	std::cout << "type = " << type << std::endl;
 	if (decimals == 0)
 		decimals += 1;
 	std::cout << std::setprecision(decimals) << std::fixed;
@@ -164,8 +181,24 @@ int main(int argc, char **argv) {
 	catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "float: " << f << 'f' <<  std::endl;
-	std::cout << "double: " << d << std::endl;
+	try {
+		std::cout << "float: ";
+		if (g_float_imp)
+			throw ImpossibleException();
+		std::cout << f << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	try {
+		std::cout << "double: ";
+		if (g_double_imp)
+			throw ImpossibleException();
+		std::cout << d << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 	return 0;
 }
 
