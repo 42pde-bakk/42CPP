@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 12:38:57 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/11 23:08:50 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/12 17:35:27 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	detect_type(std::string input, int *decimals) {
 			}
 			isfloat = 1;
 		}
-		if (input[i] == 'f') {
+		if (input[i] == 'f' && isfloat > 0) {
 			if (isfloat == 2)
 				return ERR;
 			isfloat = 2;
@@ -168,7 +168,7 @@ int main(int argc, char **argv) {
 		std::cout << c << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	try {
 		std::cout << "int: ";
@@ -177,7 +177,7 @@ int main(int argc, char **argv) {
 		std::cout << i << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	try {
 		std::cout << "float: ";
@@ -186,7 +186,7 @@ int main(int argc, char **argv) {
 		std::cout << f << 'f' << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	try {
 		std::cout << "double: ";
@@ -195,7 +195,7 @@ int main(int argc, char **argv) {
 		std::cout << d << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	return 0;
 }
