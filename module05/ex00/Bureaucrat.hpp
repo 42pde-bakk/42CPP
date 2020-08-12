@@ -1,9 +1,17 @@
-//
-// Created by PdB on 8/9/2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Bureaucrat.hpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: peer <peer@student.codam.nl>                 +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/12 21:30:23 by peer          #+#    #+#                 */
+/*   Updated: 2020/08/12 21:30:23 by peer          ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef BUREAUCRAT_BUREAUCRAT_HPP
-#define BUREAUCRAT_BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 #include <string>
 #include <stdexcept>
 
@@ -36,4 +44,4 @@ private:
 std::ostream&   operator<<(std::ostream& out, const Bureaucrat& self);
 
 
-#endif //BUREAUCRAT_BUREAUCRAT_HPP
+#endif

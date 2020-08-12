@@ -52,18 +52,18 @@ void Bureaucrat::signForm(Form &form) const {
               << "." << std::endl;
   } catch (std::exception &e) {
     std::cout << "Bureaucrat " << this->_name << " cannot sign "
-              << form.getName() << ", because " << e.what() << std::endl;
+              << form.getName() << ", because " << e.what() << "." << std::endl;
   }
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &self) {
-  out << "<" << self.getName() << ">, bureaucrat grade " << self.getGrade()
+  out << self.getName() << ", bureaucrat grade " << self.getGrade() << "."
       << std::endl;
   return out;
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException() 
-	: std::runtime_error("Grade too high") { }
+Bureaucrat::GradeTooHighException::GradeTooHighException()
+    : std::runtime_error("Grade too high") {}
 
-Bureaucrat::GradeTooLowException::GradeTooLowException() 
-	: std::runtime_error("Grade too low") { }
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+    : std::runtime_error("Grade too low") {}
