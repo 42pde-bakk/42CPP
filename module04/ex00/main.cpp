@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:31:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 14:38:31 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/12 21:06:46 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	subjecttest() {
 int	mytest() {
 	Sorcerer	Stregobor("Stregobor", "Master Irion");
 	Victim		Renfri("Renfri");
-	Peon		Peoneer("kutwijf");
+	Peon		Peoneer("NotRenfri");
 	Peon		Peoneer2(Peoneer);
 	Stooge		Stogey("noname");
 	

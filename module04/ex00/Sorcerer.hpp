@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:11:43 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 14:32:39 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/12 21:07:38 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	
 	const std::string	&get_name() const;
 	const std::string	&get_title() const;
-	void				polymorph(Victim const &) const;
+	void				polymorph(Victim const &target) const;
 
 private:
 	Sorcerer();

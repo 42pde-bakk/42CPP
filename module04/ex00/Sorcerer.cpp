@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 09:16:00 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 14:34:03 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/12 21:07:32 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ const std::string	&Sorcerer::get_title() const {
 	return _title;
 }
 
-void				Sorcerer::polymorph(Victim const &victor) const {
-	victor.getPolymorphed();
+void				Sorcerer::polymorph(Victim const &target) const {
+	target.getPolymorphed();
 }
 
 Sorcerer::~Sorcerer() {

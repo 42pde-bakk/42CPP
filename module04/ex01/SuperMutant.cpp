@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:32:11 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 16:17:52 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/12 21:05:51 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ SuperMutant::~SuperMutant() {
 
 void	SuperMutant::takeDamage(int dmg) {
 	if (dmg < 0)
-		std::cerr << "cmon bruv, cant attack for negative damage..." << std::endl;
+		std::cout << "cmon bruv, cant attack for negative damage..." << std::endl;
 	else {
 		if (dmg >= 3)
 			dmg -= 3;

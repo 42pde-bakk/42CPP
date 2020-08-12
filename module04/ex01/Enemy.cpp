@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:18:58 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 16:30:13 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/12 21:05:48 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Enemy& Enemy::operator=( const Enemy &other) {
 
 void	Enemy::takeDamage(int dmg) {
 	if (dmg < 0)
-		std::cerr << "cmon bruv, cant attack for negative damage..." << std::endl;
+		std::cout << "cmon bruv, cant attack for negative damage..." << std::endl;
 	else {
 		hp_ -= dmg;
 		if (hp_ < 0)
