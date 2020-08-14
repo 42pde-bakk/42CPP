@@ -6,9 +6,9 @@
 #include <iostream>
 
 int main() {
-  Bureaucrat harry("harry", 120);
-  Bureaucrat bossman("dickface", 1);
-  ShrubberyCreationForm	shrub("testfile");
+	Bureaucrat harry("harry", 120);
+	Bureaucrat bossman("dickface", 1);
+	ShrubberyCreationForm	shrub("testfile");
 	harry.executeForm(shrub);
 	try {
 		shrub.execute(harry);
@@ -17,7 +17,7 @@ int main() {
 		std::cout << harry.getName() << " cant execute " << shrub.getName()
 					<< " because " << e.what() << std::endl;
 	}
-  bossman.signForm(shrub);
+	bossman.signForm(shrub);
 	harry.executeForm(shrub);
 
 	RobotomyRequestForm	robo("Pop Smoke");

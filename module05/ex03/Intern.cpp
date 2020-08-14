@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/10 22:01:48 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/10 22:32:01 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/14 16:53:38 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,8 @@ Form*	Intern::makeForm(const std::string& formname, const std::string& formtarge
 	const std::string types[3] = {	"Presidential Pardon Form",
 									"Robotomy Request Form",
 									"Shrubbery Creation Form"};
-	    static t_make_funct makeFormFuncts[3] = {
-									new_shrub,
-									new_pardon,
-									new_robo,
-									};
+	static t_make_funct makeFormFuncts[3] = { new_shrub, new_pardon, new_robo};
+
 	for (int i = 0; i < 3; i++) {
 		if (formname == types[i]) {
 			std::cout << "Intern creates " << formname << "." << std::endl;
@@ -53,5 +50,4 @@ Form*	Intern::makeForm(const std::string& formname, const std::string& formtarge
 	}
 	std::cout << "No such formname found." << std::endl;
 	return NULL;
-	
 }

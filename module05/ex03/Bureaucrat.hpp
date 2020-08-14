@@ -1,6 +1,14 @@
-//
-// Created by PdB on 8/9/2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Bureaucrat.hpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/14 16:40:07 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/14 16:40:07 by pde-bakk      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
@@ -35,7 +43,7 @@ public:
 
 private:
   Bureaucrat();
-  std::string _name;
+  const std::string _name;
   int _grade;
 };
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &self);

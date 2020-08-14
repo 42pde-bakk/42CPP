@@ -1,6 +1,14 @@
-//
-// Created by PdB on 8/9/2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Bureaucrat.cpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/14 16:40:01 by pde-bakk      #+#    #+#                 */
+/*   Updated: 2020/08/14 16:40:01 by pde-bakk      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
@@ -21,7 +29,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) { *this = other; }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
   if (this != &other) {
-    this->_name = other._name;
     this->_grade = other._grade;
   }
   return *this;

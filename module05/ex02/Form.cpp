@@ -8,12 +8,12 @@
 #include <string>
 
 Form::Form(const std::string &name, int signgrade, int execgrade, std::string const& target)
-    : _name(name), _signgrade(signgrade), _execgrade(execgrade), _target(target) {
-  this->_signed = false;
-  if (this->_signgrade <= 0 || this->_execgrade <= 0)
-    throw Form::GradeTooHighException();
-  if (this->_signgrade > 150 || this->_execgrade > 150)
-    throw Form::GradeTooLowException();
+		: _name(name), _signgrade(signgrade), _execgrade(execgrade), _target(target) {
+	this->_signed = false;
+	if (this->_signgrade <= 0 || this->_execgrade <= 0)
+		throw Form::GradeTooHighException();
+	if (this->_signgrade > 150 || this->_execgrade > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::~Form() {}
@@ -27,11 +27,11 @@ int Form::getSigngrade() const { return this->_signgrade; }
 int Form::getExecgrade() const { return this->_execgrade; }
 
 void Form::beSigned(Bureaucrat const &bc) {
-  if (this->_signed == true)
-    throw AlreadySignedException();
-  if (bc.getGrade() > this->getSigngrade())
-    throw GradeTooLowException();
-  this->_signed = true;
+	if (this->_signed == true)
+		throw AlreadySignedException();
+	if (bc.getGrade() > this->getSigngrade())
+		throw GradeTooLowException();
+	this->_signed = true;
 }
 
 std::string Form::getTarget() const {
@@ -46,10 +46,10 @@ void	Form::execute(Bureaucrat const & executor) const {
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &self) {
-  out << "Form " << self.getName() << ": signed?: " << self.getSigned()
-      << ", signgrade: " << self.getSigngrade()
-      << ", execgrade: " << self.getExecgrade() << "." << std::endl;
-  return out;
+	out << "Form " << self.getName() << ": signed?: " << self.getSigned()
+    	<< ", signgrade: " << self.getSigngrade()
+    	<< ", execgrade: " << self.getExecgrade() << "." << std::endl;
+	return out;
 }
 
 Form::GradeTooHighException::GradeTooHighException() 

@@ -35,7 +35,7 @@ public:
 
 private:
   Bureaucrat();
-  std::string _name;
+  const std::string _name;
   int _grade;
 };
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &self);
