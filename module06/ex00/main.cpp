@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 12:38:57 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/12 17:35:27 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/14 17:04:08 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,10 @@ int	detect_type(std::string input, int *decimals) {
 			return DOUBLE;
 		return FLOAT;
 	}
+	for (int i = 0; input[i]; i++) {
+		if (isdigit(input[i]) == 0 && input[i] != '-' && input[i] != '+')
+			return ERR;
+	}
 	return INT;
 }
 
@@ -155,7 +159,8 @@ int main(int argc, char **argv) {
 		decimals += 1;
 	std::cout << std::setprecision(decimals) << std::fixed;
 	if (type == -1) {
-		std::cout << "err" << std::endl;
+		std::cout << "error in format string" << std::endl;
+		return 1;
 	}
 	else
 		makeFormFuncts[type](argv[1], &c, &i, &f, &d);
@@ -199,4 +204,3 @@ int main(int argc, char **argv) {
 	}
 	return 0;
 }
-
