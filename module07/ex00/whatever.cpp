@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 13:18:41 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/12 13:38:39 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/14 17:12:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	peer_test( void) {
 	std::cout << "a: " << a << ", b: " << b << std::endl;
 	char c = '&';
 	char d = '#';
-	std::cout << "the minimum of the chars = " << min(c, d) << std::endl;
+	std::cout << "the minimum of the chars = " << min(c, d) << ", and the max is: " << max(c, d) << std::endl;
 }
 
 int	main(void) {

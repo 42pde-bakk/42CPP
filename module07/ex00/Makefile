@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/12 13:18:59 by peer          ########   odam.nl          #
+#    Updated: 2020/08/14 17:11:55 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = templates.out
+NAME = whatever.out
 
 ifeq ($(shell uname), Linux)
  CXX = g++
