@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 23:12:29 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/11 23:43:44 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/14 17:07:26 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Data	*deserialize(void *raw) {
 	return out;
 }
 
-int main() {
+void	peer(void) {
 	srand(time(NULL));
 	void* tmp = serialize();
 	Data *dat = deserialize(tmp);
@@ -51,4 +51,10 @@ int main() {
 			<< dat->n << std::endl
 			<< dat->s2 << std::endl;
 	delete dat;
+}
+
+int main() {
+	peer();
+	// system("leaks serialize.out | grep bytes");
+	return 0;
 }
