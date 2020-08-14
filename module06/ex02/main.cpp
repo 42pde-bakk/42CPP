@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 23:48:22 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/12 00:15:05 by peer          ########   odam.nl         */
+/*   Updated: 2020/08/14 17:10:13 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,26 +58,27 @@ try {
 	A &Aclass = dynamic_cast<A&>(p);
 	std::cout << "A" << std::endl;
 	(void)Aclass;
+	return ;
 }
 catch (std::exception& e) { }
 try {
 	B &Bclass = dynamic_cast<B&>(p);
 	std::cout << "B" << std::endl;
 	(void)Bclass;
+	return ;
 }
 catch (std::exception& e) { }
 try {
 	C &Cclass = dynamic_cast<C&>(p);
 	std::cout << "C" << std::endl;
 	(void)Cclass;
+	return ;
 }
 catch (std::exception& e) { }
 }
 
 int	main(void) {
-	
 	identify_from_pointer(generate());
 	Base* bas = generate();
 	identify_from_reference(*bas);
-
 }
