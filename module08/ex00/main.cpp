@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 18:07:13 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/14 20:02:25 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 18:49:39 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 
 void	vectors(void) {
 	std::vector<int>	PeerVector;
-	srand(time(NULL));
 	int tofind = rand() % 100;
 	std::cout << "int tofind is " << tofind << std::endl;
 	for (int i = 0; i < 10; i++)
 		PeerVector.push_back(rand() % 100);
-	PeerVector.push_back(tofind);
+	// PeerVector.push_back(tofind);
 	for (int i = 0; i < 20; i++)
 		PeerVector.push_back(rand() % 100);
 	try {
@@ -37,7 +36,6 @@ void	vectors(void) {
 
 void	lists(void) {
 	std::list<int>	PeerList;
-	srand(time(NULL));
 	int tofind = rand() % 100;
 	std::cout << "int tofind is " << tofind << std::endl;
 	for (int i = 0; i < 10; i++)
@@ -55,6 +53,7 @@ void	lists(void) {
 }
 
 int	main(void) {
+	srand(time(NULL));
 	vectors();
 	lists();
 }
