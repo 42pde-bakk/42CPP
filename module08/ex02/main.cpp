@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/15 00:11:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/15 02:44:19 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 18:47:33 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int subject_test()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
+	//[...]
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -49,11 +50,14 @@ int peer_test()
 	Peer.push(0.1);
 	MutantStack<float>::const_iterator it = Peer.begin();
 	MutantStack<float>::const_iterator ite = Peer.end();
-	while (it != ite)
-	{
+	while (it != ite) {
 		std::cout << *it << std::endl;
-		++it;
+		it++;
 	}
+	it -= Peer.size();
+	// it -= Peer.end() - Peer.begin();
+	std::cout << *it << std::endl;
+
 	std::cout << std::endl;
 	MutantStack<float>::reverse_iterator revit = Peer.rbegin();
 	MutantStack<float>::reverse_iterator revite = Peer.rend();
@@ -64,25 +68,17 @@ int peer_test()
 	catch (std::exception& e) {
 		std::cout << "revit is not modifiable, because " << e.what() << std::endl;
 	}
-	while (revit != revite)
-	{
+	while (revit != revite) {
 		std::cout << *revit << std::endl;
-		++revit;
+		revit++;
 	}
 	std::cout << std::endl;
 	MutantStack<float>::const_reverse_iterator crevit = Peer.rbegin();
 	MutantStack<float>::const_reverse_iterator crevite = Peer.rend();
-	// try {
-	// 	*crevit = 87.2;
-	// 	std::cout << "crevit is modifiable!" << std::endl;
-	// }
-	// catch (std::exception& e) {
-	// 	std::cout << "crevit is not modifiable, because " << e.what() << std::endl;
-	// }
-	while (crevit != crevite)
-	{
+	// 	*crevit = 87.2; //to show that crevit is const
+	while (crevit != crevite) {
 		std::cout << *crevit << std::endl;
-		++crevit;
+		crevit++;
 	}
 	return 0;
 }
