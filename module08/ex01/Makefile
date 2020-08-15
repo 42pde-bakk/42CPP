@@ -6,11 +6,11 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/14 19:16:52 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/15 16:48:59 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind.out
+NAME = span.out
 
 ifeq ($(shell uname), Linux)
  CXX = g++

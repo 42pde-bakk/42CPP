@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 18:44:49 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/14 23:45:10 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 17:56:12 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ public:
 	void	addNumber(int x);
 	template <typename Iter>
 	void	addNumber(Iter begin, Iter end) {
-		if (std::distance(begin, end) + _storage.size() >= _maxsize)
+		if (std::distance(begin, end) + this->_storage.size() > this->_maxsize)
 			throw std::runtime_error("Max size reached");
-		_storage.insert(_storage.end(), begin, end);
+		this->_storage.insert(this->_storage.end(), begin, end);
 	}
 	int		shortestSpan() const;
 	int		longestSpan() const;

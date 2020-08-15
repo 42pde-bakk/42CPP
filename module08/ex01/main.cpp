@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 19:16:21 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/14 23:48:06 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 17:55:45 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,28 @@ int	subject_test() {
 }
 
 int	peer_test() {
-	Span sp = Span(100001);
+	Span sp = Span(10001);
 	std::vector<int> peervec;
 	srand(time(NULL));
-	for (int i = 0; i < 10000; i++)
+	for (int i = 0; i < 10001; i++)
 		peervec.push_back(rand());
 
 	try {
 		sp.addNumber(peervec.begin(), peervec.end());
+		sp.addNumber(rand());
 	}
 	catch (std::exception& e) {
 		std::cout << "failed: " << e.what() << std::endl;
 	}
 	try {
-		std::cout << "shortest span: " << sp.shortestSpan() << std::endl;
-		std::cout << "longest span: " << sp.longestSpan() << std::endl;
+		int shortest = sp.shortestSpan();
+		int longest = sp.longestSpan();
+		std::cout << "shortest span: " << shortest << std::endl;
+		std::cout << "longest span: " << longest << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "error because: " << e.what() << std::endl;
 	}
-	// std::cout << sp.longestSpan() << std::endl;
 	return 0;
 }
 

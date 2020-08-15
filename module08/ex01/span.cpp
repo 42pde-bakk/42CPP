@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 19:17:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/14 23:46:34 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 17:02:44 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Span& Span::operator=(const Span& other) {
 }
 
 void	Span::addNumber(int x) {
-	if (this->_maxsize == this->_storage.size())
+	if (this->_storage.size() >= this->_maxsize )
 		throw std::runtime_error("Max size reached");
 	this->_storage.push_back(x);
 }
@@ -49,10 +49,10 @@ int		Span::shortestSpan() const {
 	std::sort(tmp.begin(), tmp.end());
 	for (int i = 1; tmp[i]; i++) {
 		diff = tmp[i] - tmp[i - 1];
-		if (diff < span)
+		if (diff && diff < span)
 			span = diff;
 	}
-	if (!span || span == INT_MAX)
+	if (span == INT_MAX)
 		throw std::runtime_error("no span found");
 	return span;
 }
