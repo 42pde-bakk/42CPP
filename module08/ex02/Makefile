@@ -6,7 +6,7 @@
 #    By: Peer <pde-bakk@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/25 17:28:30 by pde-bakk      #+#    #+#                  #
-#    Updated: 2020/08/15 02:30:11 by pde-bakk      ########   odam.nl          #
+#    Updated: 2020/08/15 20:19:58 by pde-bakk      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ ifeq ($(shell uname), Linux)
  CXX = g++
 else
  CXX = clang++
+endif
+ifdef REALG
+ CXX = ~/.brew/bin/g++-10
 endif
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
