@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/14 19:17:04 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/15 17:02:44 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 20:26:09 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <algorithm>
+#include <climits>
 
 Span::Span(unsigned int N) : _maxsize(N) {
 	

@@ -6,13 +6,14 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 17:45:33 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/14 20:02:19 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/15 20:24:11 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 #include <algorithm>
+#include <stdexcept>
 
 template <typename T>
 typename T::iterator easyfind(T& container, const int& tofind) {
