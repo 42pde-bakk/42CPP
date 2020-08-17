@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/15 00:11:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/15 18:47:33 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/08/16 22:25:54 by peer          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,22 @@ int peer_test()
 	Peer.push(5.8);
 	Peer.push(737.0);
 	Peer.push(0.1);
-	MutantStack<float>::const_iterator it = Peer.begin();
-	MutantStack<float>::const_iterator ite = Peer.end();
+	MutantStack<float> Peer2(Peer);
+	MutantStack<float> Peer3;
+	Peer3 = Peer;
+	MutantStack<float>::const_iterator it = Peer3.begin();
+	MutantStack<float>::const_iterator ite = Peer3.end();
 	while (it != ite) {
 		std::cout << *it << std::endl;
 		it++;
 	}
-	it -= Peer.size();
+	it -= Peer3.size();
 	// it -= Peer.end() - Peer.begin();
 	std::cout << *it << std::endl;
 
 	std::cout << std::endl;
-	MutantStack<float>::reverse_iterator revit = Peer.rbegin();
-	MutantStack<float>::reverse_iterator revite = Peer.rend();
+	MutantStack<float>::reverse_iterator revit = Peer2.rbegin();
+	MutantStack<float>::reverse_iterator revite = Peer2.rend();
 	try {
 		*revit = 87.2;
 		std::cout << "revit is modifiable!" << std::endl;
