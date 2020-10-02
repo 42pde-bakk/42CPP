@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/11 12:38:57 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/14 17:04:08 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/09/17 16:12:03 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ std::string	g_nanid;
 bool	g_int_imp = false;
 bool	g_float_imp = false;
 bool	g_double_imp = false;
+
+std::string	gettype(int x) {
+	std::string out[] = {"CHAR", "INT", "FLOAT", "DOUBLE", "OTHER"};
+	if (x < 0 || x > 4)
+		return "ERR";
+	return out[x];
+}
 
 class NonDisplayableException : public std::runtime_error {
 	public:
@@ -164,6 +171,7 @@ int main(int argc, char **argv) {
 	}
 	else
 		makeFormFuncts[type](argv[1], &c, &i, &f, &d);
+	std::cerr << "type is " << gettype(type) << std::endl;
 	try {
 		std::cout << "char: ";
 		if (!c)
