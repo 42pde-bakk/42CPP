@@ -31,6 +31,7 @@
 *.out
 *.app
 megaphone #executable for module00/ex00
+replace
 # cmake
 cmake-build-debug
 
