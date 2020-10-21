@@ -6,13 +6,14 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:55:17 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 18:05:58 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 17:53:31 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <string>
 #include <iostream>
+#include <stdlib.h>
 #define reset "\033[0m"
 
 FragTrap::FragTrap( ) : ClapTrap("FR4G-TP", "Fragging-Trapper") {

@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/02 14:01:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 18:24:23 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 17:53:35 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "NinjaTrap.hpp"
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 int	main(void) {
 	srand(time(NULL));

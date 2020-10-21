@@ -6,13 +6,15 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:55:17 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 17:42:58 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 17:53:19 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
+#include <stdlib.h>
+
 #define reset "\033[0m"
 
 ScavTrap::ScavTrap( ) : BasicTrap("ScavTP", "Scav") {

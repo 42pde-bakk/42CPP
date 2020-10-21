@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/02 14:01:48 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 17:44:14 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 17:52:47 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ScavTrap.hpp"
 #include "BasicTrap.hpp"
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 
 int	main(void) {
