@@ -13,17 +13,12 @@
 #include "BasicTrap.hpp"
 #include <string>
 #include <iostream>
+#include <stdlib.h>
 #define reset "\033[0m"
 
 std::string		BasicTrap::getRandomColour() {
-	static int taken[6];
 	std::string colours[] = {"\033[0;31m", "\033[0;32m", "\033[0;33m", "\033[0;34m", "\033[0;35m", "\033[0;36m"};
-	int x = rand() % 6;
-	int	*foo = std::find(std::begin(taken), std::end(taken), x);
-	if (foo != std::end(taken))
-		x = rand() % 6;
-	// std::cout << "x = " << x << std::endl;
-	return colours[x];
+	return colours[rand() % 6];
 }
 
 BasicTrap::BasicTrap( ) {

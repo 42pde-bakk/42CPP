@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 12:10:23 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 12:07:22 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 15:46:29 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "AssaultTerminator.hpp"
 #include <iostream>
 #include <string>
+#include <strings.h>
+#include <stdlib.h>
 
 int subjecttest() {
 	ISpaceMarine* bob = new TacticalMarine;
@@ -62,6 +64,6 @@ int	main( void) {
 	srand(time(NULL));
 	subjecttest();
 	// myowntest();
-	system("leaks squad.out");
+	// system("leaks squad.out");
 	return 0;
 }

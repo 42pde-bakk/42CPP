@@ -22,7 +22,7 @@ jobs:
     - name: ex02
       run: |
             make re -C module04/ex02
-    - name: ex02
+    - name: ex03
       run: |
             make re -C module04/ex03
 
@@ -41,6 +41,6 @@ jobs:
     - name: ex02
       run: |
             make re -C module04/ex02
-    - name: ex02
+    - name: ex03
       run: |
             make re -C module04/ex03
