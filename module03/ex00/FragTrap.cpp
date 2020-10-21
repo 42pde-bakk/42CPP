@@ -6,13 +6,14 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:55:17 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/10/21 15:21:04 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 17:48:33 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <string>
 #include <iostream>
+#include <stdlib.h>
 #define reset "\033[0m"
 
 std::string		FragTrap::getRandomColour() {
