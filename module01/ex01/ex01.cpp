@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 14:28:16 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/28 16:49:37 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 15:14:51 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	main(int argc, char **argv) {
 	std::string command = ("leaks " + std::string(argv[0])).erase(6, 2);
 	memoryLeak();
 	std::cout << command << std::endl;
-	system( command.c_str());
+	// system( command.c_str());
 	return 0;
 }
