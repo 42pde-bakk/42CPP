@@ -35,7 +35,9 @@ megaphone #executable for module00/ex00
 cmake-build-debug
 
 #vscode junk
+.DS_Store
 *.vscode
+*.dSYM
 #emacs shit
 *.c~
 *.h~
