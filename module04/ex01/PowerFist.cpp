@@ -17,7 +17,7 @@
 PowerFist::PowerFist() : AWeapon( "Power Fist", 50, 8 ) {
 }
 
-PowerFist::PowerFist( const PowerFist &old_weapon) {
+PowerFist::PowerFist( const PowerFist &old_weapon) : AWeapon( ) {
 	*this = old_weapon;
 }
 

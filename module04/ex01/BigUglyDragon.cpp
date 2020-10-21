@@ -18,7 +18,7 @@ BigUglyDragon::BigUglyDragon() : Enemy(200, "BigUglyDragon") {
 	std::cout <<  "* dragonsound *" << std::endl;
 }
 
-BigUglyDragon::BigUglyDragon(const BigUglyDragon &other) {
+BigUglyDragon::BigUglyDragon(const BigUglyDragon &other) : Enemy( ) {
 	*this = other;
 }
 

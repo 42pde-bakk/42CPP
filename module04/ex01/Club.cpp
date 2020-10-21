@@ -17,7 +17,7 @@
 Club::Club() : AWeapon( "Club", 5, 1 ) {
 }
 
-Club::Club( const Club &old_weapon) {
+Club::Club( const Club &old_weapon) : AWeapon( ) {
 	*this = old_weapon;
 }
 

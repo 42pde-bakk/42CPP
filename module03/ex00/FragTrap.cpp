@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 16:55:17 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/02 16:44:32 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 15:21:04 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,8 @@
 #define reset "\033[0m"
 
 std::string		FragTrap::getRandomColour() {
-	static int taken[6];
 	std::string colours[] = {"\033[0;31m", "\033[0;32m", "\033[0;33m", "\033[0;34m", "\033[0;35m", "\033[0;36m"};
-	int x = rand() % 6;
-	int	*foo = std::find(std::begin(taken), std::end(taken), x);
-	if (foo != std::end(taken))
-		x = rand() % 6;
-	// std::cout << "x = " << x << std::endl;
-	return colours[x];
+	return colours[rand() % 6];
 }
 
 FragTrap::FragTrap( ) : _name("Fragger-Trapper"), _hp(100), _maxhp(100), _ep(100), _maxep(100), _lvl(1), 

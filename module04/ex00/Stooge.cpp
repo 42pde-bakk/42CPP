@@ -22,7 +22,7 @@ Stooge::Stooge(const std::string &name) : Victim(name) {
 	std::cout << "stooge constructor" << std::endl;
 }
 
-Stooge::Stooge( const Stooge &old_Stooge) {
+Stooge::Stooge( const Stooge &old_Stooge) : Victim( ) {
 	*this = old_Stooge;
 }
 

@@ -17,7 +17,7 @@
 PlasmaRifle::PlasmaRifle() : AWeapon( "Plasma Rifle", 21, 5 ) {
 }
 
-PlasmaRifle::PlasmaRifle( const PlasmaRifle &old_weapon) {
+PlasmaRifle::PlasmaRifle( const PlasmaRifle &old_weapon) : AWeapon( ) {
 	*this = old_weapon;
 }
 

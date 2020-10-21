@@ -22,7 +22,7 @@ Peon::Peon(const std::string &name) : Victim(name) {
 	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon( const Peon &old_peon) {
+Peon::Peon( const Peon &old_peon)  : Victim() {
 	*this = old_peon;
 }
 

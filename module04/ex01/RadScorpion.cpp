@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:32:11 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/07 16:19:01 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 15:18:33 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ RadScorpion::RadScorpion() : Enemy(80, "RadScorpion") {
 	std::cout <<  "* click click click *" << std::endl;
 }
 
-RadScorpion::RadScorpion(const RadScorpion &other) {
+RadScorpion::RadScorpion(const RadScorpion &other) : Enemy( ) {
 	*this = other;
 }
 

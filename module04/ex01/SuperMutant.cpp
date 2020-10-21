@@ -6,7 +6,7 @@
 /*   By: pde-bakk <pde-bakk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:32:11 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/08/12 21:05:51 by peer          ########   odam.nl         */
+/*   Updated: 2020/10/21 15:18:30 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ SuperMutant::SuperMutant() : Enemy(170, "Super Mutant") {
 	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
-SuperMutant::SuperMutant(const SuperMutant &other) {
+SuperMutant::SuperMutant(const SuperMutant &other) : Enemy( ) {
 	*this = other;
 }
 
