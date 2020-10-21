@@ -1,0 +1,46 @@
+name: Check Ubuntu & macOS compilation Module 00
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  jobuntu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: ex00
+      run:  |
+            make re -C module04/ex00
+    - name: ex01
+      run: |
+            make re -C module04/ex01
+    - name: ex02
+      run: |
+            make re -C module04/ex02
+    - name: ex02
+      run: |
+            make re -C module04/ex03
+
+  stevejobs:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: ex00
+      run:  |
+            make re -C module04/ex00
+    - name: ex01
+      run: |
+            make re -C module04/ex01
+    - name: ex02
+      run: |
+            make re -C module04/ex02
+    - name: ex02
+      run: |
+            make re -C module04/ex03
