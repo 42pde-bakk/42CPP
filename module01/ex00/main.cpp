@@ -6,7 +6,7 @@
 /*   By: Peer <pde-bakk@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 12:53:36 by pde-bakk      #+#    #+#                 */
-/*   Updated: 2020/07/28 15:33:07 by pde-bakk      ########   odam.nl         */
+/*   Updated: 2020/10/21 15:02:19 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int		main(void) {
 	ponyOnTheStack();
 	PonyOnTheHeap();
 
-	system("leaks ponies.out");
+	// system("leaks ponies.out");
 	return 0;
 }
