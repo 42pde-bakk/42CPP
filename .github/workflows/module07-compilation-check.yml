@@ -1,4 +1,4 @@
-name: Check Ubuntu & macOS compilation Module 07
+name: Module 07 --- Check Ubuntu & macOS compilation
 
 on:
   push:
