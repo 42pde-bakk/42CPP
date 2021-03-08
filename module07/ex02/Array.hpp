@@ -6,7 +6,7 @@
 /*   By: peer <peer@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 14:42:48 by peer          #+#    #+#                 */
-/*   Updated: 2020/08/12 17:04:03 by peer          ########   odam.nl         */
+/*   Updated: 2021/03/08 16:24:16 by pde-bakk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ class Array {
 	}
 	Array(unsigned int n) {
 		this->_n = n;
-		this->_arr = new T[n];
-		for (unsigned int i = 0; i < n; i++)
-			this->_arr[i] = T();
+		this->_arr = new T[n]();
 	}
 	Array(const Array& other) {
 		this->_n = other._n;
